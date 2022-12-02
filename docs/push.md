@@ -57,7 +57,7 @@ wechat:
 ```
 
 + 前往微信[公众号开发者平台](http://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login)，手机微信扫码登录
-+ 配置url为**http://ip:port/wx**,ip为你运行机器的公网ip,若使用docker运行，端口则为宿主机中映射出来的端口，ip和端口的配置和web使用同一个配置
++ 配置url为**http://ip:port/wx** ,ip为你运行机器的公网ip,若使用docker运行，端口则为宿主机中映射出来的端口，ip和端口的配置和web使用同一个配置
 + 设置token,需和配置项中一样
 + 分别添加登录模板消息和普通模板消息，添加要求:
 
