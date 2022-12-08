@@ -10,9 +10,6 @@ import (
 
 	log "github.com/sirupsen/logrus"
 	"github.com/tidwall/gjson"
-
-	"github.com/johlanse/study_xxqg/conf"
-	"github.com/johlanse/study_xxqg/utils/update"
 )
 
 // Restart
@@ -33,12 +30,12 @@ func Restart() {
 
 }
 
-func GetAbout() string {
-	msg := "study_xxqg\n程序版本："
-	msg += conf.GetVersion()
-	msg += "\n" + update.CheckUpdate(conf.GetVersion())
-	return msg
-}
+//func GetAbout() string {
+//	msg := "study_xxqg\n程序版本："
+//	msg += conf.GetVersion()
+//	msg += "\n" + update.CheckUpdate(conf.GetVersion())
+//	return msg
+//}
 
 // CheckUserCookie
 /**
@@ -151,7 +148,7 @@ func DownloadDbFile() {
 		}
 	}()
 	log.Infoln("正在从github下载题库文件！")
-	response, err := http.Get("https://github.com/johlanse/study_xxqg/releases/download/v1.0.37-beta3/QuestionBank.db")
+	response, err := http.Get("https://github.com/cccchenry/study_xxxxxx/releases/download/v1.0.37-beta3/QuestionBank.db")
 	if err != nil {
 		log.Errorln("下载db文件错误" + err.Error())
 		return

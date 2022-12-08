@@ -10,7 +10,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/johlanse/study_xxqg/utils"
+	"github.com/cccchenry/study_xxxxxx/utils"
 )
 
 type Ding struct {
@@ -84,6 +84,7 @@ func MarkDown(title, text string, ats ...string) map[string]interface{} {
 }
 
 // SendMessage Function to send message
+//
 //goland:noinspection GoUnhandledErrorResult
 func (t *TypeSecret) SendMessage(data map[string]interface{}) error {
 	_, err := utils.GetClient().R().SetBodyJsonMarshal(data).Post(t.getURL())

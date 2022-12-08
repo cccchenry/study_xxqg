@@ -6,8 +6,8 @@ import (
 
 	log "github.com/sirupsen/logrus"
 
-	"github.com/johlanse/study_xxqg/conf"
-	"github.com/johlanse/study_xxqg/utils"
+	"github.com/cccchenry/study_xxxxxx/conf"
+	"github.com/cccchenry/study_xxxxxx/utils"
 )
 
 type PushPlus struct {

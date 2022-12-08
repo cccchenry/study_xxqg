@@ -3,7 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/johlanse/study_xxqg/utils/stop"
+	"github.com/cccchenry/study_xxxxxx/utils/stop"
+	"github.com/robfig/cron/v3"
 	"io"
 	"math/rand"
 	"net/http"
@@ -19,21 +20,20 @@ import (
 
 	"github.com/gin-gonic/gin"
 	rotates "github.com/lestrrat-go/file-rotatelogs"
-	"github.com/robfig/cron/v3"
 	log "github.com/sirupsen/logrus"
 
 	nested "github.com/Lyrics-you/sail-logrus-formatter/sailor"
 	"github.com/huoxue1/xdaemon"
 
-	"github.com/johlanse/study_xxqg/conf"
-	"github.com/johlanse/study_xxqg/lib/state"
-	"github.com/johlanse/study_xxqg/utils"
-	// "github.com/johlanse/study_xxqg/gui"
-	"github.com/johlanse/study_xxqg/lib"
-	"github.com/johlanse/study_xxqg/model"
-	"github.com/johlanse/study_xxqg/push"
-	"github.com/johlanse/study_xxqg/utils/update"
-	"github.com/johlanse/study_xxqg/web"
+	"github.com/cccchenry/study_xxxxxx/conf"
+	"github.com/cccchenry/study_xxxxxx/lib/state"
+	"github.com/cccchenry/study_xxxxxx/utils"
+	// "github.com/cccchenry/study_xxxxxx/gui"
+	"github.com/cccchenry/study_xxxxxx/lib"
+	"github.com/cccchenry/study_xxxxxx/model"
+	"github.com/cccchenry/study_xxxxxx/push"
+	"github.com/cccchenry/study_xxxxxx/utils/update"
+	"github.com/cccchenry/study_xxxxxx/web"
 )
 
 var (
@@ -104,7 +104,7 @@ func init() {
 	})
 	if !utils.CheckQuestionDB() {
 		go utils.DownloadDbFile()
-		//log.Errorln("题库文件不存在或已损坏，请手动前往 https://github.com/johlanse/study_xxqg/blob/main/conf/QuestionBank.db 下载并放入程序根目录")
+		//log.Errorln("题库文件不存在或已损坏，请手动前往 https://github.com/cccchenry/study_xxxxxx/blob/main/conf/QuestionBank.db 下载并放入程序根目录")
 	}
 }
 

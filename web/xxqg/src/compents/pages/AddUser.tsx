@@ -58,7 +58,7 @@ class AddUser extends Component<any, any>{
                 let token = await getToken(resp.data.split("=")[1],data.sign)
                 console.log(token)
                 if (token.success){
-                    Toast.show("登录成功\n该软件为免费软件，若你正在付费使用，请速度举报管理员")
+                    Toast.show("登录成功\n软件开发不易，若你使用感觉还好，请多多赞赏管理员哦~")
                     this.setState({
                         link : ""
                     })

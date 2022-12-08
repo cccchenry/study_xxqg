@@ -1,6 +1,6 @@
-module github.com/johlanse/study_xxqg
+module github.com/cccchenry/study_xxxxxx
 
-go 1.18
+go 1.19
 
 replace github.com/willf/bitset v1.2.1 => github.com/bits-and-blooms/bitset v1.2.1
 
@@ -23,7 +23,8 @@ require (
 	github.com/mitchellh/mapstructure v1.5.0
 	github.com/panjf2000/ants/v2 v2.5.0
 	github.com/playwright-community/playwright-go v0.2000.1
-	github.com/robfig/cron/v3 v3.0.0
+	github.com/robfig/cron v1.2.0
+	github.com/robfig/cron/v3 v3.0.1
 	github.com/sirupsen/logrus v1.9.0
 	github.com/spf13/viper v1.12.0
 	github.com/tidwall/gjson v1.12.1

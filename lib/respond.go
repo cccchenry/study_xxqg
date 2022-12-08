@@ -5,6 +5,8 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/imroc/req/v3"
+	"github.com/playwright-community/playwright-go"
 	rand2 "math/rand"
 	"net/http"
 	"regexp"
@@ -12,14 +14,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/imroc/req/v3"
-	"github.com/playwright-community/playwright-go"
 	log "github.com/sirupsen/logrus"
 	"github.com/tidwall/gjson"
 
-	"github.com/johlanse/study_xxqg/conf"
-	"github.com/johlanse/study_xxqg/model"
-	"github.com/johlanse/study_xxqg/utils"
+	"github.com/cccchenry/study_xxxxxx/conf"
+	"github.com/cccchenry/study_xxxxxx/model"
+	"github.com/cccchenry/study_xxxxxx/utils"
 )
 
 const (

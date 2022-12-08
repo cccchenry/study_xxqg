@@ -21,9 +21,7 @@ class Help extends Component<any, any> {
     }
     render() {
         return <>
-            <h1 style={{color:"red",margin:10}}>该软件为免费软件，若你目前正在付费使用，请速度举报管理员</h1><br/>
-            <h2 style={{margin:10}}>项目地址：<a href="https://github.com/johlanse/study_xxqg">https://github.com/johlanse/study_xxqg</a></h2>
-            <br/><h2 style={{margin:10}}>{this.state.about}</h2>
+            <h1 style={{color:"red",margin:10}}>软件开发不易，若你使用感觉还好，请多多赞赏管理员哦~</h1><br/>
         </>
     }
 }

@@ -1,14 +1,14 @@
 package main
 
 import (
+	"github.com/panjf2000/ants/v2"
 	"sync"
 
-	"github.com/panjf2000/ants/v2"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/johlanse/study_xxqg/lib"
-	"github.com/johlanse/study_xxqg/lib/state"
-	"github.com/johlanse/study_xxqg/model"
+	"github.com/cccchenry/study_xxxxxx/lib"
+	"github.com/cccchenry/study_xxxxxx/lib/state"
+	"github.com/cccchenry/study_xxxxxx/model"
 )
 
 type Task struct {

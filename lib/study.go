@@ -4,15 +4,15 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/playwright-community/playwright-go"
 	"math/rand"
 	"strconv"
 	"time"
 
-	"github.com/playwright-community/playwright-go"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/johlanse/study_xxqg/model"
-	"github.com/johlanse/study_xxqg/utils"
+	"github.com/cccchenry/study_xxxxxx/model"
+	"github.com/cccchenry/study_xxxxxx/utils"
 )
 
 var (

@@ -14,12 +14,12 @@ import (
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/johlanse/study_xxqg/conf"
-	"github.com/johlanse/study_xxqg/lib"
-	"github.com/johlanse/study_xxqg/lib/state"
-	"github.com/johlanse/study_xxqg/model"
-	"github.com/johlanse/study_xxqg/utils"
-	"github.com/johlanse/study_xxqg/utils/update"
+	"github.com/cccchenry/study_xxxxxx/conf"
+	"github.com/cccchenry/study_xxxxxx/lib"
+	"github.com/cccchenry/study_xxxxxx/lib/state"
+	"github.com/cccchenry/study_xxxxxx/model"
+	"github.com/cccchenry/study_xxxxxx/utils"
+	"github.com/cccchenry/study_xxxxxx/utils/update"
 )
 
 var (
@@ -75,7 +75,6 @@ func TgInit() {
 
 // Telegram
 // @Description:
-//
 type Telegram struct {
 	Token  string
 	ChatId int64
@@ -120,7 +119,7 @@ func (t *Telegram) Init() {
 	newPlugin("/quit", quit)
 	newPlugin("/study_all", studyAll)
 	newPlugin("/delete", deleteUser)
-	newPlugin("/version", checkVersion)
+	//newPlugin("/version", checkVersion)
 	newPlugin("/update", botUpdate)
 	newPlugin("/restart", botRestart)
 	newPlugin("/get_fail_users", getFailUser)
@@ -263,25 +262,21 @@ func getFailUser(bot *Telegram, from int64, args []string) {
 	bot.SendMsg(from, "当前过期用户:\n"+msg)
 }
 
-//
-//  checkVersion
-//  @Description: 检查版本信息
-//  @param bot
-//  @param from
-//  @param args
-//
-func checkVersion(bot *Telegram, from int64, args []string) {
-	about := utils.GetAbout()
-	bot.SendMsg(from, about)
-}
+// checkVersion
+// @Description: 检查版本信息
+// @param bot
+// @param from
+// @param args
+//func checkVersion(bot *Telegram, from int64, args []string) {
+//	//about := utils.GetAbout()
+//	bot.SendMsg(from, about)
+//}
 
-//
-//  botRestart
-//  @Description: 重启程序
-//  @param bot
-//  @param from
-//  @param args
-//
+// botRestart
+// @Description: 重启程序
+// @param bot
+// @param from
+// @param args
 func botRestart(bot *Telegram, from int64, args []string) {
 	if from != conf.GetConfig().TG.ChatID {
 		bot.SendMsg(from, "请联系管理员解决！！")
@@ -291,13 +286,11 @@ func botRestart(bot *Telegram, from int64, args []string) {
 	utils.Restart()
 }
 
-//
-//  botUpdate
-//  @Description: 更新程序
-//  @param bot
-//  @param from
-//  @param args
-//
+// botUpdate
+// @Description: 更新程序
+// @param bot
+// @param from
+// @param args
 func botUpdate(bot *Telegram, from int64, args []string) {
 	if from != conf.GetConfig().TG.ChatID {
 		bot.SendMsg(from, "请联系管理员解决！！")

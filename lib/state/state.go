@@ -3,7 +3,7 @@ package state
 import (
 	"sync"
 
-	"github.com/johlanse/study_xxqg/lib"
+	"github.com/cccchenry/study_xxxxxx/lib"
 )
 
 var (

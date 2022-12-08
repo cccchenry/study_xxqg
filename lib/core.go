@@ -3,6 +3,7 @@ package lib
 import (
 	"errors"
 	"fmt"
+	"github.com/playwright-community/playwright-go"
 	"net/url"
 	"os"
 	"runtime"
@@ -10,12 +11,11 @@ import (
 	"time"
 
 	"github.com/google/uuid"
-	"github.com/playwright-community/playwright-go"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/johlanse/study_xxqg/conf"
-	"github.com/johlanse/study_xxqg/model"
-	"github.com/johlanse/study_xxqg/utils"
+	"github.com/cccchenry/study_xxxxxx/conf"
+	"github.com/cccchenry/study_xxxxxx/model"
+	"github.com/cccchenry/study_xxxxxx/utils"
 )
 
 // Core

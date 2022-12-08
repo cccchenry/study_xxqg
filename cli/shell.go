@@ -6,11 +6,11 @@ import (
 	"github.com/desertbit/grumble"
 	log "github.com/sirupsen/logrus"
 
-	"github.com/johlanse/study_xxqg/conf"
-	"github.com/johlanse/study_xxqg/lib"
-	"github.com/johlanse/study_xxqg/model"
-	"github.com/johlanse/study_xxqg/push"
-	"github.com/johlanse/study_xxqg/utils"
+	"github.com/cccchenry/study_xxxxxx/conf"
+	"github.com/cccchenry/study_xxxxxx/lib"
+	"github.com/cccchenry/study_xxxxxx/model"
+	"github.com/cccchenry/study_xxxxxx/push"
+	"github.com/cccchenry/study_xxxxxx/utils"
 )
 
 func RunCli() {
