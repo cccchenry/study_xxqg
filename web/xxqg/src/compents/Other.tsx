@@ -32,16 +32,16 @@ class Other extends Component<any, any> {
 
     }
 
-    onUpdate = () => {
-        Dialog.confirm({confirmText:"确认",cancelText:"取消",content:"你确认要更新程序吗？"}).then((result)=>{
-            if (result){
-                update().then(r => {
-
-                });
-                Toast.show("更新完成")
-            }
-        })
-    }
+    // onUpdate = () => {
+    //     Dialog.confirm({confirmText:"确认",cancelText:"取消",content:"你确认要更新程序吗？"}).then((result)=>{
+    //         if (result){
+    //             update().then(r => {
+    //
+    //             });
+    //             Toast.show("更新完成")
+    //         }
+    //     })
+    // }
 
     onClick = (value: string) => {
 
@@ -68,7 +68,7 @@ class Other extends Component<any, any> {
                 </List.Item>
 
                 <List.Item prefix={<UpCircleOutline />} onClick={() => {
-                    this.onUpdate()
+                    // this.onUpdate()
                 }}>
                     更新程序
                 </List.Item>

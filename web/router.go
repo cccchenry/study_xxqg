@@ -12,7 +12,6 @@ import (
 
 	"github.com/cccchenry/study_xxxxxx/conf"
 	"github.com/cccchenry/study_xxxxxx/utils"
-	"github.com/cccchenry/study_xxxxxx/utils/update"
 )
 
 // 将静态文件嵌入到可执行程序中来
@@ -67,27 +66,27 @@ func RouterInit() *gin.Engine {
 		}
 	})
 
-	router.POST("/update", check(), func(ctx *gin.Context) {
-		if ctx.GetInt("level") == 1 {
-			update.SelfUpdate("", conf.GetVersion())
-			ctx.JSON(200, Resp{
-				Code:    200,
-				Message: "",
-				Data:    nil,
-				Success: true,
-				Error:   "",
-			})
-			utils.Restart()
-		} else {
-			ctx.JSON(200, Resp{
-				Code:    401,
-				Message: "",
-				Data:    nil,
-				Success: false,
-				Error:   "",
-			})
-		}
-	})
+	//router.POST("/update", check(), func(ctx *gin.Context) {
+	//	if ctx.GetInt("level") == 1 {
+	//		update.SelfUpdate("", conf.GetVersion())
+	//		ctx.JSON(200, Resp{
+	//			Code:    200,
+	//			Message: "",
+	//			Data:    nil,
+	//			Success: true,
+	//			Error:   "",
+	//		})
+	//		utils.Restart()
+	//	} else {
+	//		ctx.JSON(200, Resp{
+	//			Code:    401,
+	//			Message: "",
+	//			Data:    nil,
+	//			Success: false,
+	//			Error:   "",
+	//		})
+	//	}
+	//})
 
 	if utils.FileIsExist("./config/flutter_xxqg/") {
 		router.StaticFS("/flutter_xxqg", http.Dir("./config/flutter_xxqg/"))

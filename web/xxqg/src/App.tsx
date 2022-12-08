@@ -169,6 +169,7 @@ function App(props: any, states: any) {
     let location = useLocation();
 
 
+
     useEffect(() => {
         checkToken().then((t) => {
             console.log(t)
@@ -188,10 +189,8 @@ function App(props: any, states: any) {
         })
     }, [a])
 
-
     return <>
         <Routes>
-
 
             <Route path={"/login"} element={<Login navigate={navigate} location={location}/>}>
             </Route>
