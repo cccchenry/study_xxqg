@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)https://www.imtrq.com/archives/3198 -->
+<html lang="zh-CN" style="background: unset;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<title itemprop="name">在openwrt路由器上用study_xxqg和telegram代理每天刷学习强国 – Yaodo Blog</title>
+<link rel="shortcut icon" href="https://static.imtrq.com/wp-content/uploads/2021/10/cropped-93474015_p1-2.jpg"> 
+<meta name="theme-color" content="#31363b">
+<meta http-equiv="x-dns-prefetch-control" content="on">
+<meta name="robots" content="max-image-preview:large">
+<link rel="dns-prefetch" href="https://www.imtrq.com/">
+<!-- <link rel='stylesheet' id='dashicons-css' href='https://www.imtrq.com/wp-includes/css/dashicons.min.css?ver=6.1.1' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='elusive-css' href='https://www.imtrq.com/wp-content/plugins/menu-icons/vendor/codeinwp/icon-picker/css/types/elusive.min.css?ver=2.0' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='menu-icon-font-awesome-css' href='https://www.imtrq.com/wp-content/plugins/menu-icons/css/fontawesome/css/all.min.css?ver=5.15.4' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='foundation-icons-css' href='https://www.imtrq.com/wp-content/plugins/menu-icons/vendor/codeinwp/icon-picker/css/types/foundation-icons.min.css?ver=3.0' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='genericons-css' href='https://www.imtrq.com/wp-content/plugins/menu-icons/vendor/codeinwp/icon-picker/css/types/genericons.min.css?ver=3.4' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='menu-icons-extra-css' href='https://www.imtrq.com/wp-content/plugins/menu-icons/css/extra.min.css?ver=0.13.2' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='wp-block-library-css' href='https://www.imtrq.com/wp-includes/css/dist/block-library/style.min.css?ver=6.1.1' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='classic-theme-styles-css' href='https://www.imtrq.com/wp-includes/css/classic-themes.min.css?ver=1' type='text/css' media='all' /> -->
+<link rel="stylesheet" type="text/css" href="./在openwrt路由器上用study_xxqg_files/7n9dy.css" media="all">
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<!-- <link rel='stylesheet' id='saukra_css-css' href='https://www.imtrq.com/wp-content/themes/sakura/style.css?ver=3.4.0' type='text/css' media='all' /> -->
+<!-- <link rel='stylesheet' id='enlighterjs-css' href='https://www.imtrq.com/wp-content/plugins/enlighter/cache/enlighterjs.min.css?ver=hNtwaxWyBrb7GW0' type='text/css' media='all' /> -->
+<link rel="stylesheet" type="text/css" href="./在openwrt路由器上用study_xxqg_files/7n9dy(1).css" media="all">
+<link rel="canonical" href="https://www.imtrq.com/archives/3198">
+<link rel="shortlink" href="https://www.imtrq.com/?p=3198">
+<link rel="alternate" type="application/json+oembed" href="https://www.imtrq.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.imtrq.com%2Farchives%2F3198">
+<link rel="alternate" type="text/xml+oembed" href="https://www.imtrq.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.imtrq.com%2Farchives%2F3198&amp;format=xml">
+<style type="text/css">
+.site-top .lower nav {display: block !important;}
+.author-profile i , .post-like a , .post-share .show-share , .sub-text , .we-info a , span.sitename , .post-more i:hover , #pagination a:hover , .post-content a:hover , .float-content i:hover{ color: #FE9600 }
+.feature i , /*.feature-title span ,*/ .download , .navigator i:hover , .links ul li:before , .ar-time i , span.ar-circle , .object , .comment .comment-reply-link , .siren-checkbox-radio:checked + .siren-checkbox-radioInput:after { background: #FE9600 }
+::-webkit-scrollbar-thumb { background: #FE9600 }
+.download , .navigator i:hover , .link-title , .links ul li:hover , #pagination a:hover , .comment-respond input[type='submit']:hover { border-color: #FE9600 }
+.entry-content a:hover , .site-info a:hover , .comment h4 a , #comments-navi a.prev , #comments-navi a.next , .comment h4 a:hover , .site-top ul li a:hover , .entry-title a:hover , #archives-temp h3 , span.page-numbers.current , .sorry li a:hover , .site-title a:hover , i.iconfont.js-toggle-search.iconsearch:hover , .comment-respond input[type='submit']:hover, blockquote:before, blockquote:after { color: #FE9600 }
+#aplayer-float .aplayer-lrc-current { color: #FE9600 !important}
+.is-active-link::before, .commentbody:not(:placeholder-shown)~.input-label, .commentbody:focus~.input-label {
+background-color: #FE9600 !important
+}
+.commentbody:focus {
+border-color: #FE9600 !important
+}
+.insert-image-tips:hover, .insert-image-tips-hover{ 
+color: #FE9600;
+border: 1px solid #FE9600}
+.site-top ul li a:after {
+background-color: #FE9600}
+.scrollbar,.butterBar-message {
+background: #FE9600 !important
+}
+#nprogress .spinner-icon{ 
+border-top-color: #FE9600; 
+border-left-color: #FE9600}
+#nprogress .bar {
+background: #FE9600}
+.changeSkin-gear,.toc{
+background:rgba(255,255,255,0.8);
+}
+.entry-content th {
+background-color: #FE9600}
+.post-list-thumb .post-content-wrap {
+float: left;
+padding-left: 30px;
+padding-right: 0;
+text-align: right;
+margin: 20px 10px 10px 0
+}
+.post-list-thumb .post-thumb {
+float: left
+}
+.post-list-thumb .post-thumb a {
+border-radius: 10px 0 0 10px
+}
+.post-list-thumb{opacity: 0}
+.post-list-show {opacity: 1}
+.centerbg{background-image: url("https://www.imtrq.com/wp-json/sakura/v1/image/cover");background-position: center center;background-attachment: inherit;}
+.rotating {
+-webkit-animation: rotating 6s linear infinite;
+-moz-animation: rotating 6s linear infinite;
+-ms-animation: rotating 6s linear infinite;
+-o-animation: rotating 6s linear infinite;
+animation: rotating 6s linear infinite;
+}
+body.dark #main-container,body.dark .pattern-center:after,body.dark #mo-nav,body.dark .headertop-bar::after,body.dark .site-content,body.dark .comments,body.dark .site-footer{background:#31363b !important;}body.dark .pattern-center-blank,body.dark .yya,body.dark .blank,body.dark .changeSkin-gear,body.dark .toc,body.dark .search-form input{background:rgba(49,54,59,0.85);}body.dark .single-reward .reward-row{background:#bebebe;}body.dark .font-family-controls button{background-color:#828080;}body.dark .single-reward .reward-row:before{border-bottom:13px solid #bebebe;}body.dark .search-form--modal,body.dark .ins-section .ins-section-header{border-bottom:none;background:rgba(49,54,59,0.95);}body.dark .ins-section .ins-search-item:hover,body.dark .ins-section .ins-search-item.active,body.dark .ins-section .ins-search-item:hover .ins-slug,body.dark .ins-section .ins-search-item.active .ins-slug,body.dark .ins-section .ins-search-item:hover .ins-search-preview,body.dark .ins-section .ins-search-item.active .ins-search-preview,body.dark .ins-section .ins-search-item:hover header,body.dark .ins-section .ins-search-item:hover .iconfont{color:#fff;background:#31363b;}body.dark .search_close:after,body.dark .search_close:before{background-color:#eee;}body.dark .search_close:hover:after,body.dark .search_close:hover:before{background-color:#3daee9;}body.dark input.m-search-input{background:#bebebe;}body.dark .openNav .icon,body.dark .openNav .icon:after,body.dark .openNav .icon:before{background-color:#eee;}body.dark .site-header:hover{background:#31363b;}body.dark .post-date,body.dark .post-list-thumb a,body.dark .menhera-container .emoji-item:hover{color:#424952;}body.dark .entry-content p,body.dark .entry-content ul,body.dark .entry-content ol,body.dark .comments .body p,body.dark .float-content,body.dark .post-list p,body.dark .link-title{color:#bebebe !important;}body.dark .entry-title a,body.dark .post-list-thumb .post-title,body.dark .post-list-thumb,body.dark .art-content #archives .al_mon_list .al_mon,body.dark .art-content #archives .al_mon_list span,body.dark .art .art-content #archives a,body.dark .menhera-container .emoji-item{color:#bebebe;}body.dark .logolink a,body.dark .post-content a:hover,body.dark .comment .body p a{color:rgba(61,174,233,0.8) !important;}body.dark .lower li ul,body.dark .header-user-avatar:hover .header-user-menu{background:#31363b;}body.dark .header-user-menu::before,body.dark .lower li ul::before{border-color:transparent transparent #31363b transparent;}body.dark .site-top ul li a,body.dark .header-user-menu a,body.dark #mo-nav ul li a,body.dark .site-title a,body.dark header.page-header,body.dark h1.cat-title{color:#eee;}body.dark .art .art-content #archives .al_year,body.dark .comment-respond input,body.dark .comment-respond textarea,body.dark .siren-checkbox-label{color:#eee;}body.dark input[type=color]:focus,body.dark input[type=date]:focus,body.dark input[type=datetime-local]:focus,body.dark input[type=datetime]:focus,body.dark input[type=email]:focus,body.dark input[type=month]:focus,body.dark input[type=number]:focus,body.dark input[type=password]:focus,body.dark input[type=range]:focus,body.dark input[type=search]:focus,body.dark input[type=tel]:focus,body.dark input[type=text]:focus,body.dark input[type=time]:focus,body.dark input[type=url]:focus,body.dark input[type=week]:focus,body.dark textarea:focus,body.dark #mo-nav .m-search form{color:#eee;background-color:#31363b;}body.dark .post-date,body.dark .post-list-thumb a,body.dark .post-meta{color:#888;}body.dark img,body.dark .cd-top,body.dark .highlight-wrap,body.dark iframe,body.dark .entry-content .aplayer{filter:brightness(0.8);}body.dark .post-list-thumb{box-shadow:0 1px 35px -8px rgba(0,0,0,0.8);}body.dark .centerbg{background-blend-mode:hard-light;background-color:#31363b;}body.dark .notice{color:#EFF0F1;background:#232629;border:none;}body.dark h1.fes-title,body.dark h1.main-title{border-bottom:1px dashed #ababab;}body.dark .scrollbar,body.dark .butterBar p.butterBar-message{background:#3daee9 !important;}body.dark .entry-content p code{color:#eee !important;background:rgba(61,174,233,0.5) !important;}body.dark .notification,body.dark #moblieGoTop,body.dark #moblieDarkLight{color:#eee;background-color:#232629;}body.dark #moblieGoTop:hover,body.dark #moblieDarkLight:hover{background-color:#232629;opacity:.8;}body.dark .widget-area{background-color:rgba(35,38,41,0.8);}body.dark .skin-menu,body.dark .menu-list li,body.dark .widget-area .heading,body.dark .widget-area .show-hide svg,body.dark #aplayer-float,body.dark .aplayer.aplayer-fixed .aplayer-body,body.dark .aplayer .aplayer-miniswitcher,body.dark .aplayer .aplayer-pic{color:#eee;background-color:#232629 !important;}body.dark .skin-menu::after{border-color:#232629 transparent transparent transparent;}body.dark .aplayer .aplayer-list ol li .aplayer-list-author{color:#eee;}body.dark #aplayer-float .aplayer-lrc-current{color:transparent !important;}body.dark .aplayer.aplayer-fixed .aplayer-lrc{text-shadow:-1px -1px 0 #989898;}body.dark .aplayer .aplayer-list ol li.aplayer-list-light{background:rgba(61,174,233,0.5) !important;}body.dark .aplayer .aplayer-list ol li:hover{background:rgba(61,174,233,0.8) !important;}body.dark .aplayer.aplayer-fixed .aplayer-list{border:none !important;}body.dark .aplayer.aplayer-fixed .aplayer-info,body.dark .aplayer .aplayer-list ol li{border-top:none !important;}body.dark .aplayer .aplayer-info .aplayer-controller .aplayer-time .aplayer-icon:hover path,body.dark .widget-area .show-hide svg path{fill:#fafafa;}body.dark,body.dark button,body.dark input,body.dark select,body.dark textarea{color:#eee;}body.dark button,body.dark input[type=button],body.dark input[type=reset],body.dark input[type=submit]{box-shadow:none;}body.dark .entry-content th{background-color:#3daee9;}body.dark .author-profile i,body.dark .post-like a,body.dark .post-share .show-share,body.dark .sub-text,body.dark .we-info a,body.dark span.sitename,body.dark .post-more i:hover,body.dark #pagination a:hover,body.dark .post-content a:hover,body.dark .float-content i:hover{color:#3daee9;}body.dark .feature i,body.dark .feature-title span,body.dark .download,body.dark .navigator i:hover,body.dark .links ul li:before,body.dark .ar-time i,body.dark span.ar-circle,body.dark .object,body.dark .comment .comment-reply-link,body.dark .siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#3daee9;}body.dark .download,body.dark .navigator i:hover,body.dark .link-title,body.dark .links ul li:hover,body.dark #pagination a:hover,body.dark .comment-respond input[type='submit']:hover{border-color:#3daee9;}body.dark .site-info a:hover,body.dark .comment h4 a,body.dark #comments-navi a.prev,body.dark #comments-navi a.next,body.dark .comment h4 a:hover,body.dark .site-top ul li a:hover,body.dark .entry-title a:hover,body.dark #archives-temp h3,body.dark span.page-numbers.current,body.dark .sorry li a:hover,body.dark .site-title a:hover,body.dark .js-toggle-search.iconsearch:hover,body.dark .comment-respond input[type='submit']:hover,body.dark blockquote:before,body.dark blockquote:after,body.dark .entry-content a{color:#3daee9 !important;}body.dark .entry-content a:hover{color:#3daee9;text-decoration:underline !important;}body.dark .is-active-link::before,body.dark .commentbody:not(:placeholder-shown) ~ .input-label,body.dark .commentbody:focus ~ .input-label{background-color:#3daee9 !important;}body.dark .commentbody:focus{border-color:#3daee9 !important;}body.dark .insert-image-tips:hover,body.dark .insert-image-tips-hover{color:#3daee9;border:1px solid #3daee9;}body.dark .site-top ul li a:after,body.dark .menu-list li:hover,body.dark .font-family-controls button.selected{background-color:#3daee9 !important;}body.dark #nprogress .spinner-icon{border-top-color:#3daee9;border-left-color:#3daee9;}body.dark #nprogress .bar{background:#3daee9;}body.dark .comment .info,body.dark .comment-respond .logged-in-as,body.dark .notification,body.dark .comment-respond .logged-in-as a,body.dark .comment-respond .logged-in-as a:hover{color:#9499a8;}body.dark .sm{color:#377292 !important;}html,#main-container,.pattern-center:after,#mo-nav,.headertop-bar::after,.site-content,.comments,.site-footer,.pattern-center-blank,.yya,.blank,.changeSkin-gear,.toc,.search-form input{transition:background 1s;}.entry-content p,.entry-content ul,.entry-content ol,.comments .body p,.float-content,.post-list p,.link-title{transition:color 1s;}body.dark::-webkit-scrollbar-thumb,body.dark::selection{background:#377292;color:#ccc;}
+</style>
+<script>
+/*Initial Variables*/
+var mashiro_option = new Object();
+var mashiro_global = new Object();
+mashiro_option.NProgressON = false;
+mashiro_option.email_domain = "";
+mashiro_option.email_name = "";
+mashiro_option.cookie_version_control = "";
+mashiro_option.qzone_autocomplete = false;
+mashiro_option.site_name = "Yaodo Blog - 妖渡的博客";
+mashiro_option.author_name = "Yaodo";
+mashiro_option.template_url = "https://www.imtrq.com/wp-content/themes/sakura";
+mashiro_option.site_url = "https://www.imtrq.com";
+mashiro_option.qq_api_url = "https://www.imtrq.com/wp-json/sakura/v1/qqinfo/json"; 
+// mashiro_option.qq_avatar_api_url = "https://api.2heng.xin/qqinfo/";
+mashiro_option.live_search = false;
+mashiro_option.skin_bg0 = "none";
+mashiro_option.skin_bg1 = "https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/sakura.png";
+mashiro_option.skin_bg2 = "https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/plaid2dbf8.jpg";
+mashiro_option.skin_bg3 = "https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/star02.png";
+mashiro_option.skin_bg4 = "https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/kyotoanimation.png";
+mashiro_option.skin_bg5 = "https://cdn.jsdelivr.net/gh/spirit1431007/cdn@1.6/img/dot_orange.gif";
+mashiro_option.skin_bg6 = "https://api.mashiro.top/bing/";
+mashiro_option.skin_bg7 = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.1.2/other-sites/api-index/images/me.png";
+mashiro_option.darkmode = false;
+mashiro_option.land_at_home = false;
+mashiro_option.baguetteBoxON = false;
+mashiro_option.clipboardCopyright = true;
+mashiro_option.entry_content_theme_src = "https://www.imtrq.com/wp-content/themes/sakura/cdn/theme/sakura.css?3.4.0";
+mashiro_option.entry_content_theme = "sakura";
+mashiro_option.jsdelivr_css_src = "https://www.imtrq.com/wp-content/themes/sakura/cdn/css/lib.css?3.4.0";
+mashiro_option.cover_api = "https://www.imtrq.com/wp-json/sakura/v1/image/cover";
+mashiro_option.windowheight = /Mobile|Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent) ? 'fixed' : 'auto';
+/*End of Initial Variables*/
+</script>
+<link rel="icon" href="https://static.imtrq.com/wp-content/uploads/2021/10/cropped-93474015_p1-2-32x32.jpg" sizes="32x32">
+<link rel="icon" href="https://static.imtrq.com/wp-content/uploads/2021/10/cropped-93474015_p1-2-192x192.jpg" sizes="192x192">
+<link rel="apple-touch-icon" href="https://static.imtrq.com/wp-content/uploads/2021/10/cropped-93474015_p1-2-180x180.jpg">
+<meta name="msapplication-TileImage" content="https://static.imtrq.com/wp-content/uploads/2021/10/cropped-93474015_p1-2-270x270.jpg">
+<script type="text/javascript">
+if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+alert('朋友，IE浏览器未适配哦~\n如果是 360、QQ 等双核浏览器，请关闭 IE 模式！');
+}
+</script>
+<style>.swal2-popup.swal2-toast{flex-direction:row;align-items:center;width:auto;padding:.625em;overflow-y:hidden;background:#fff;box-shadow:0 0 .625em #d9d9d9}.swal2-popup.swal2-toast .swal2-header{flex-direction:row;padding:0}.swal2-popup.swal2-toast .swal2-title{flex-grow:1;justify-content:flex-start;margin:0 .6em;font-size:1em}.swal2-popup.swal2-toast .swal2-footer{margin:.5em 0 0;padding:.5em 0 0;font-size:.8em}.swal2-popup.swal2-toast .swal2-close{position:static;width:.8em;height:.8em;line-height:.8}.swal2-popup.swal2-toast .swal2-content{justify-content:flex-start;padding:0;font-size:1em}.swal2-popup.swal2-toast .swal2-icon{width:2em;min-width:2em;height:2em;margin:0}.swal2-popup.swal2-toast .swal2-icon .swal2-icon-content{display:flex;align-items:center;font-size:1.8em;font-weight:700}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-popup.swal2-toast .swal2-icon .swal2-icon-content{font-size:.25em}}.swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line]{top:.875em;width:1.375em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:.3125em}.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:.3125em}.swal2-popup.swal2-toast .swal2-actions{flex-basis:auto!important;width:auto;height:auto;margin:0 .3125em;padding:0}.swal2-popup.swal2-toast .swal2-styled{margin:.125em .3125em;padding:.3125em .625em;font-size:1em}.swal2-popup.swal2-toast .swal2-styled:focus{box-shadow:0 0 0 1px #fff,0 0 0 3px rgba(100,150,200,.5)}.swal2-popup.swal2-toast .swal2-success{border-color:#a5dc86}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line]{position:absolute;width:1.6em;height:3em;transform:rotate(45deg);border-radius:50%}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.8em;left:-.5em;transform:rotate(-45deg);transform-origin:2em 2em;border-radius:4em 0 0 4em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.25em;left:.9375em;transform-origin:0 1.5em;border-radius:0 4em 4em 0}.swal2-popup.swal2-toast .swal2-success .swal2-success-ring{width:2em;height:2em}.swal2-popup.swal2-toast .swal2-success .swal2-success-fix{top:0;left:.4375em;width:.4375em;height:2.6875em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line]{height:.3125em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=tip]{top:1.125em;left:.1875em;width:.75em}.swal2-popup.swal2-toast .swal2-success [class^=swal2-success-line][class$=long]{top:.9375em;right:.1875em;width:1.375em}.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-tip{-webkit-animation:swal2-toast-animate-success-line-tip .75s;animation:swal2-toast-animate-success-line-tip .75s}.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-long{-webkit-animation:swal2-toast-animate-success-line-long .75s;animation:swal2-toast-animate-success-line-long .75s}.swal2-popup.swal2-toast.swal2-show{-webkit-animation:swal2-toast-show .5s;animation:swal2-toast-show .5s}.swal2-popup.swal2-toast.swal2-hide{-webkit-animation:swal2-toast-hide .1s forwards;animation:swal2-toast-hide .1s forwards}.swal2-container{display:flex;position:fixed;z-index:1060;top:0;right:0;bottom:0;left:0;flex-direction:row;align-items:center;justify-content:center;padding:.625em;overflow-x:hidden;transition:background-color .1s;-webkit-overflow-scrolling:touch}.swal2-container.swal2-backdrop-show,.swal2-container.swal2-noanimation{background:rgba(0,0,0,.4)}.swal2-container.swal2-backdrop-hide{background:0 0!important}.swal2-container.swal2-top{align-items:flex-start}.swal2-container.swal2-top-left,.swal2-container.swal2-top-start{align-items:flex-start;justify-content:flex-start}.swal2-container.swal2-top-end,.swal2-container.swal2-top-right{align-items:flex-start;justify-content:flex-end}.swal2-container.swal2-center{align-items:center}.swal2-container.swal2-center-left,.swal2-container.swal2-center-start{align-items:center;justify-content:flex-start}.swal2-container.swal2-center-end,.swal2-container.swal2-center-right{align-items:center;justify-content:flex-end}.swal2-container.swal2-bottom{align-items:flex-end}.swal2-container.swal2-bottom-left,.swal2-container.swal2-bottom-start{align-items:flex-end;justify-content:flex-start}.swal2-container.swal2-bottom-end,.swal2-container.swal2-bottom-right{align-items:flex-end;justify-content:flex-end}.swal2-container.swal2-bottom-end>:first-child,.swal2-container.swal2-bottom-left>:first-child,.swal2-container.swal2-bottom-right>:first-child,.swal2-container.swal2-bottom-start>:first-child,.swal2-container.swal2-bottom>:first-child{margin-top:auto}.swal2-container.swal2-grow-fullscreen>.swal2-modal{display:flex!important;flex:1;align-self:stretch;justify-content:center}.swal2-container.swal2-grow-row>.swal2-modal{display:flex!important;flex:1;align-content:center;justify-content:center}.swal2-container.swal2-grow-column{flex:1;flex-direction:column}.swal2-container.swal2-grow-column.swal2-bottom,.swal2-container.swal2-grow-column.swal2-center,.swal2-container.swal2-grow-column.swal2-top{align-items:center}.swal2-container.swal2-grow-column.swal2-bottom-left,.swal2-container.swal2-grow-column.swal2-bottom-start,.swal2-container.swal2-grow-column.swal2-center-left,.swal2-container.swal2-grow-column.swal2-center-start,.swal2-container.swal2-grow-column.swal2-top-left,.swal2-container.swal2-grow-column.swal2-top-start{align-items:flex-start}.swal2-container.swal2-grow-column.swal2-bottom-end,.swal2-container.swal2-grow-column.swal2-bottom-right,.swal2-container.swal2-grow-column.swal2-center-end,.swal2-container.swal2-grow-column.swal2-center-right,.swal2-container.swal2-grow-column.swal2-top-end,.swal2-container.swal2-grow-column.swal2-top-right{align-items:flex-end}.swal2-container.swal2-grow-column>.swal2-modal{display:flex!important;flex:1;align-content:center;justify-content:center}.swal2-container.swal2-no-transition{transition:none!important}.swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right):not(.swal2-grow-fullscreen)>.swal2-modal{margin:auto}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-container .swal2-modal{margin:0!important}}.swal2-popup{display:none;position:relative;box-sizing:border-box;flex-direction:column;justify-content:center;width:32em;max-width:100%;padding:1.25em;border:none;border-radius:5px;background:#fff;font-family:inherit;font-size:1rem}.swal2-popup:focus{outline:0}.swal2-popup.swal2-loading{overflow-y:hidden}.swal2-header{display:flex;flex-direction:column;align-items:center;padding:0 1.8em}.swal2-title{position:relative;max-width:100%;margin:0 0 .4em;padding:0;color:#595959;font-size:1.875em;font-weight:600;text-align:center;text-transform:none;word-wrap:break-word}.swal2-actions{display:flex;z-index:1;box-sizing:border-box;flex-wrap:wrap;align-items:center;justify-content:center;width:100%;margin:1.25em auto 0;padding:0 1.6em}.swal2-actions:not(.swal2-loading) .swal2-styled[disabled]{opacity:.4}.swal2-actions:not(.swal2-loading) .swal2-styled:hover{background-image:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,.1))}.swal2-actions:not(.swal2-loading) .swal2-styled:active{background-image:linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.2))}.swal2-loader{display:none;align-items:center;justify-content:center;width:2.2em;height:2.2em;margin:0 1.875em;-webkit-animation:swal2-rotate-loading 1.5s linear 0s infinite normal;animation:swal2-rotate-loading 1.5s linear 0s infinite normal;border-width:.25em;border-style:solid;border-radius:100%;border-color:#2778c4 transparent #2778c4 transparent}.swal2-styled{margin:.3125em;padding:.625em 1.1em;box-shadow:none;font-weight:500}.swal2-styled:not([disabled]){cursor:pointer}.swal2-styled.swal2-confirm{border:0;border-radius:.25em;background:initial;background-color:#2778c4;color:#fff;font-size:1.0625em}.swal2-styled.swal2-deny{border:0;border-radius:.25em;background:initial;background-color:#d14529;color:#fff;font-size:1.0625em}.swal2-styled.swal2-cancel{border:0;border-radius:.25em;background:initial;background-color:#757575;color:#fff;font-size:1.0625em}.swal2-styled:focus{outline:0;box-shadow:0 0 0 3px rgba(100,150,200,.5)}.swal2-styled::-moz-focus-inner{border:0}.swal2-footer{justify-content:center;margin:1.25em 0 0;padding:1em 0 0;border-top:1px solid #eee;color:#545454;font-size:1em}.swal2-timer-progress-bar-container{position:absolute;right:0;bottom:0;left:0;height:.25em;overflow:hidden;border-bottom-right-radius:5px;border-bottom-left-radius:5px}.swal2-timer-progress-bar{width:100%;height:.25em;background:rgba(0,0,0,.2)}.swal2-image{max-width:100%;margin:1.25em auto}.swal2-close{position:absolute;z-index:2;top:0;right:0;align-items:center;justify-content:center;width:1.2em;height:1.2em;padding:0;overflow:hidden;transition:color .1s ease-out;border:none;border-radius:5px;background:0 0;color:#ccc;font-family:serif;font-size:2.5em;line-height:1.2;cursor:pointer}.swal2-close:hover{transform:none;background:0 0;color:#f27474}.swal2-close:focus{outline:0;box-shadow:inset 0 0 0 3px rgba(100,150,200,.5)}.swal2-close::-moz-focus-inner{border:0}.swal2-content{z-index:1;justify-content:center;margin:0;padding:0 1.6em;color:#545454;font-size:1.125em;font-weight:400;line-height:normal;text-align:center;word-wrap:break-word}.swal2-checkbox,.swal2-file,.swal2-input,.swal2-radio,.swal2-select,.swal2-textarea{margin:1em auto}.swal2-file,.swal2-input,.swal2-textarea{box-sizing:border-box;width:100%;transition:border-color .3s,box-shadow .3s;border:1px solid #d9d9d9;border-radius:.1875em;background:inherit;box-shadow:inset 0 1px 1px rgba(0,0,0,.06);color:inherit;font-size:1.125em}.swal2-file.swal2-inputerror,.swal2-input.swal2-inputerror,.swal2-textarea.swal2-inputerror{border-color:#f27474!important;box-shadow:0 0 2px #f27474!important}.swal2-file:focus,.swal2-input:focus,.swal2-textarea:focus{border:1px solid #b4dbed;outline:0;box-shadow:0 0 0 3px rgba(100,150,200,.5)}.swal2-file::-moz-placeholder,.swal2-input::-moz-placeholder,.swal2-textarea::-moz-placeholder{color:#ccc}.swal2-file:-ms-input-placeholder,.swal2-input:-ms-input-placeholder,.swal2-textarea:-ms-input-placeholder{color:#ccc}.swal2-file::placeholder,.swal2-input::placeholder,.swal2-textarea::placeholder{color:#ccc}.swal2-range{margin:1em auto;background:#fff}.swal2-range input{width:80%}.swal2-range output{width:20%;color:inherit;font-weight:600;text-align:center}.swal2-range input,.swal2-range output{height:2.625em;padding:0;font-size:1.125em;line-height:2.625em}.swal2-input{height:2.625em;padding:0 .75em}.swal2-input[type=number]{max-width:10em}.swal2-file{background:inherit;font-size:1.125em}.swal2-textarea{height:6.75em;padding:.75em}.swal2-select{min-width:50%;max-width:100%;padding:.375em .625em;background:inherit;color:inherit;font-size:1.125em}.swal2-checkbox,.swal2-radio{align-items:center;justify-content:center;background:#fff;color:inherit}.swal2-checkbox label,.swal2-radio label{margin:0 .6em;font-size:1.125em}.swal2-checkbox input,.swal2-radio input{margin:0 .4em}.swal2-input-label{display:flex;justify-content:center;margin:1em auto}.swal2-validation-message{display:none;align-items:center;justify-content:center;margin:0 -2.7em;padding:.625em;overflow:hidden;background:#f0f0f0;color:#666;font-size:1em;font-weight:300}.swal2-validation-message::before{content:"!";display:inline-block;width:1.5em;min-width:1.5em;height:1.5em;margin:0 .625em;border-radius:50%;background-color:#f27474;color:#fff;font-weight:600;line-height:1.5em;text-align:center}.swal2-icon{position:relative;box-sizing:content-box;justify-content:center;width:5em;height:5em;margin:1.25em auto 1.875em;border:.25em solid transparent;border-radius:50%;border-color:#000;font-family:inherit;line-height:5em;cursor:default;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.swal2-icon .swal2-icon-content{display:flex;align-items:center;font-size:3.75em}.swal2-icon.swal2-error{border-color:#f27474;color:#f27474}.swal2-icon.swal2-error .swal2-x-mark{position:relative;flex-grow:1}.swal2-icon.swal2-error [class^=swal2-x-mark-line]{display:block;position:absolute;top:2.3125em;width:2.9375em;height:.3125em;border-radius:.125em;background-color:#f27474}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=left]{left:1.0625em;transform:rotate(45deg)}.swal2-icon.swal2-error [class^=swal2-x-mark-line][class$=right]{right:1em;transform:rotate(-45deg)}.swal2-icon.swal2-error.swal2-icon-show{-webkit-animation:swal2-animate-error-icon .5s;animation:swal2-animate-error-icon .5s}.swal2-icon.swal2-error.swal2-icon-show .swal2-x-mark{-webkit-animation:swal2-animate-error-x-mark .5s;animation:swal2-animate-error-x-mark .5s}.swal2-icon.swal2-warning{border-color:#facea8;color:#f8bb86}.swal2-icon.swal2-info{border-color:#9de0f6;color:#3fc3ee}.swal2-icon.swal2-question{border-color:#c9dae1;color:#87adbd}.swal2-icon.swal2-success{border-color:#a5dc86;color:#a5dc86}.swal2-icon.swal2-success [class^=swal2-success-circular-line]{position:absolute;width:3.75em;height:7.5em;transform:rotate(45deg);border-radius:50%}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=left]{top:-.4375em;left:-2.0635em;transform:rotate(-45deg);transform-origin:3.75em 3.75em;border-radius:7.5em 0 0 7.5em}.swal2-icon.swal2-success [class^=swal2-success-circular-line][class$=right]{top:-.6875em;left:1.875em;transform:rotate(-45deg);transform-origin:0 3.75em;border-radius:0 7.5em 7.5em 0}.swal2-icon.swal2-success .swal2-success-ring{position:absolute;z-index:2;top:-.25em;left:-.25em;box-sizing:content-box;width:100%;height:100%;border:.25em solid rgba(165,220,134,.3);border-radius:50%}.swal2-icon.swal2-success .swal2-success-fix{position:absolute;z-index:1;top:.5em;left:1.625em;width:.4375em;height:5.625em;transform:rotate(-45deg)}.swal2-icon.swal2-success [class^=swal2-success-line]{display:block;position:absolute;z-index:2;height:.3125em;border-radius:.125em;background-color:#a5dc86}.swal2-icon.swal2-success [class^=swal2-success-line][class$=tip]{top:2.875em;left:.8125em;width:1.5625em;transform:rotate(45deg)}.swal2-icon.swal2-success [class^=swal2-success-line][class$=long]{top:2.375em;right:.5em;width:2.9375em;transform:rotate(-45deg)}.swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-tip{-webkit-animation:swal2-animate-success-line-tip .75s;animation:swal2-animate-success-line-tip .75s}.swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-long{-webkit-animation:swal2-animate-success-line-long .75s;animation:swal2-animate-success-line-long .75s}.swal2-icon.swal2-success.swal2-icon-show .swal2-success-circular-line-right{-webkit-animation:swal2-rotate-success-circular-line 4.25s ease-in;animation:swal2-rotate-success-circular-line 4.25s ease-in}.swal2-progress-steps{flex-wrap:wrap;align-items:center;max-width:100%;margin:0 0 1.25em;padding:0;background:inherit;font-weight:600}.swal2-progress-steps li{display:inline-block;position:relative}.swal2-progress-steps .swal2-progress-step{z-index:20;flex-shrink:0;width:2em;height:2em;border-radius:2em;background:#2778c4;color:#fff;line-height:2em;text-align:center}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step{background:#2778c4}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step{background:#add8e6;color:#fff}.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step~.swal2-progress-step-line{background:#add8e6}.swal2-progress-steps .swal2-progress-step-line{z-index:10;flex-shrink:0;width:2.5em;height:.4em;margin:0 -1px;background:#2778c4}[class^=swal2]{-webkit-tap-highlight-color:transparent}.swal2-show{-webkit-animation:swal2-show .3s;animation:swal2-show .3s}.swal2-hide{-webkit-animation:swal2-hide .15s forwards;animation:swal2-hide .15s forwards}.swal2-noanimation{transition:none}.swal2-scrollbar-measure{position:absolute;top:-9999px;width:50px;height:50px;overflow:scroll}.swal2-rtl .swal2-close{right:auto;left:0}.swal2-rtl .swal2-timer-progress-bar{right:0;left:auto}@supports (-ms-accelerator:true){.swal2-range input{width:100%!important}.swal2-range output{display:none}}@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.swal2-range input{width:100%!important}.swal2-range output{display:none}}@-webkit-keyframes swal2-toast-show{0%{transform:translateY(-.625em) rotateZ(2deg)}33%{transform:translateY(0) rotateZ(-2deg)}66%{transform:translateY(.3125em) rotateZ(2deg)}100%{transform:translateY(0) rotateZ(0)}}@keyframes swal2-toast-show{0%{transform:translateY(-.625em) rotateZ(2deg)}33%{transform:translateY(0) rotateZ(-2deg)}66%{transform:translateY(.3125em) rotateZ(2deg)}100%{transform:translateY(0) rotateZ(0)}}@-webkit-keyframes swal2-toast-hide{100%{transform:rotateZ(1deg);opacity:0}}@keyframes swal2-toast-hide{100%{transform:rotateZ(1deg);opacity:0}}@-webkit-keyframes swal2-toast-animate-success-line-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@keyframes swal2-toast-animate-success-line-tip{0%{top:.5625em;left:.0625em;width:0}54%{top:.125em;left:.125em;width:0}70%{top:.625em;left:-.25em;width:1.625em}84%{top:1.0625em;left:.75em;width:.5em}100%{top:1.125em;left:.1875em;width:.75em}}@-webkit-keyframes swal2-toast-animate-success-line-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}@keyframes swal2-toast-animate-success-line-long{0%{top:1.625em;right:1.375em;width:0}65%{top:1.25em;right:.9375em;width:0}84%{top:.9375em;right:0;width:1.125em}100%{top:.9375em;right:.1875em;width:1.375em}}@-webkit-keyframes swal2-show{0%{transform:scale(.7)}45%{transform:scale(1.05)}80%{transform:scale(.95)}100%{transform:scale(1)}}@keyframes swal2-show{0%{transform:scale(.7)}45%{transform:scale(1.05)}80%{transform:scale(.95)}100%{transform:scale(1)}}@-webkit-keyframes swal2-hide{0%{transform:scale(1);opacity:1}100%{transform:scale(.5);opacity:0}}@keyframes swal2-hide{0%{transform:scale(1);opacity:1}100%{transform:scale(.5);opacity:0}}@-webkit-keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.8125em;width:1.5625em}}@keyframes swal2-animate-success-line-tip{0%{top:1.1875em;left:.0625em;width:0}54%{top:1.0625em;left:.125em;width:0}70%{top:2.1875em;left:-.375em;width:3.125em}84%{top:3em;left:1.3125em;width:1.0625em}100%{top:2.8125em;left:.8125em;width:1.5625em}}@-webkit-keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@keyframes swal2-animate-success-line-long{0%{top:3.375em;right:2.875em;width:0}65%{top:3.375em;right:2.875em;width:0}84%{top:2.1875em;right:0;width:3.4375em}100%{top:2.375em;right:.5em;width:2.9375em}}@-webkit-keyframes swal2-rotate-success-circular-line{0%{transform:rotate(-45deg)}5%{transform:rotate(-45deg)}12%{transform:rotate(-405deg)}100%{transform:rotate(-405deg)}}@keyframes swal2-rotate-success-circular-line{0%{transform:rotate(-45deg)}5%{transform:rotate(-45deg)}12%{transform:rotate(-405deg)}100%{transform:rotate(-405deg)}}@-webkit-keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;transform:scale(.4);opacity:0}50%{margin-top:1.625em;transform:scale(.4);opacity:0}80%{margin-top:-.375em;transform:scale(1.15)}100%{margin-top:0;transform:scale(1);opacity:1}}@keyframes swal2-animate-error-x-mark{0%{margin-top:1.625em;transform:scale(.4);opacity:0}50%{margin-top:1.625em;transform:scale(.4);opacity:0}80%{margin-top:-.375em;transform:scale(1.15)}100%{margin-top:0;transform:scale(1);opacity:1}}@-webkit-keyframes swal2-animate-error-icon{0%{transform:rotateX(100deg);opacity:0}100%{transform:rotateX(0);opacity:1}}@keyframes swal2-animate-error-icon{0%{transform:rotateX(100deg);opacity:0}100%{transform:rotateX(0);opacity:1}}@-webkit-keyframes swal2-rotate-loading{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes swal2-rotate-loading{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow:hidden}body.swal2-height-auto{height:auto!important}body.swal2-no-backdrop .swal2-container{top:auto;right:auto;bottom:auto;left:auto;max-width:calc(100% - .625em * 2);background-color:transparent!important}body.swal2-no-backdrop .swal2-container>.swal2-modal{box-shadow:0 0 10px rgba(0,0,0,.4)}body.swal2-no-backdrop .swal2-container.swal2-top{top:0;left:50%;transform:translateX(-50%)}body.swal2-no-backdrop .swal2-container.swal2-top-left,body.swal2-no-backdrop .swal2-container.swal2-top-start{top:0;left:0}body.swal2-no-backdrop .swal2-container.swal2-top-end,body.swal2-no-backdrop .swal2-container.swal2-top-right{top:0;right:0}body.swal2-no-backdrop .swal2-container.swal2-center{top:50%;left:50%;transform:translate(-50%,-50%)}body.swal2-no-backdrop .swal2-container.swal2-center-left,body.swal2-no-backdrop .swal2-container.swal2-center-start{top:50%;left:0;transform:translateY(-50%)}body.swal2-no-backdrop .swal2-container.swal2-center-end,body.swal2-no-backdrop .swal2-container.swal2-center-right{top:50%;right:0;transform:translateY(-50%)}body.swal2-no-backdrop .swal2-container.swal2-bottom{bottom:0;left:50%;transform:translateX(-50%)}body.swal2-no-backdrop .swal2-container.swal2-bottom-left,body.swal2-no-backdrop .swal2-container.swal2-bottom-start{bottom:0;left:0}body.swal2-no-backdrop .swal2-container.swal2-bottom-end,body.swal2-no-backdrop .swal2-container.swal2-bottom-right{right:0;bottom:0}@media print{body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown){overflow-y:scroll!important}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown)>[aria-hidden=true]{display:none}body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container{position:static!important}}body.swal2-toast-shown .swal2-container{background-color:transparent}body.swal2-toast-shown .swal2-container.swal2-top{top:0;right:auto;bottom:auto;left:50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-top-end,body.swal2-toast-shown .swal2-container.swal2-top-right{top:0;right:0;bottom:auto;left:auto}body.swal2-toast-shown .swal2-container.swal2-top-left,body.swal2-toast-shown .swal2-container.swal2-top-start{top:0;right:auto;bottom:auto;left:0}body.swal2-toast-shown .swal2-container.swal2-center-left,body.swal2-toast-shown .swal2-container.swal2-center-start{top:50%;right:auto;bottom:auto;left:0;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-center{top:50%;right:auto;bottom:auto;left:50%;transform:translate(-50%,-50%)}body.swal2-toast-shown .swal2-container.swal2-center-end,body.swal2-toast-shown .swal2-container.swal2-center-right{top:50%;right:0;bottom:auto;left:auto;transform:translateY(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-left,body.swal2-toast-shown .swal2-container.swal2-bottom-start{top:auto;right:auto;bottom:0;left:0}body.swal2-toast-shown .swal2-container.swal2-bottom{top:auto;right:auto;bottom:0;left:50%;transform:translateX(-50%)}body.swal2-toast-shown .swal2-container.swal2-bottom-end,body.swal2-toast-shown .swal2-container.swal2-bottom-right{top:auto;right:0;bottom:0;left:auto}body.swal2-toast-column .swal2-toast{flex-direction:column;align-items:stretch}body.swal2-toast-column .swal2-toast .swal2-actions{flex:1;align-self:stretch;height:2.2em;margin-top:.3125em}body.swal2-toast-column .swal2-toast .swal2-loading{justify-content:center}body.swal2-toast-column .swal2-toast .swal2-input{height:2em;margin:.3125em auto;font-size:1em}body.swal2-toast-column .swal2-toast .swal2-validation-message{font-size:1em}</style><style type="text/css">.hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}</style><style id="lbkheag4.zg">
+                .lh-popup {
+                    font-size: 1em;
+                    font: 16px/1.5 'Microsoft Yahei',arial,helvetica,sans-serif;
+                }
+
+                .lh-content {
+                    padding: 0;
+                }
+                
+                .lh-close {
+                    box-shadow: none;
+                }
+
+                .lh-close:focus {
+                    box-shadow: none;
+                }
+
+
+                .lh-menu {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    font-size: 18px;
+                }
+
+                .lh-item {
+                    padding-top: 20px;
+                    margin-bottom: 0;
+                }
+
+                .lh-footer {
+                    font-size: 16px;
+                }
+
+                .lh-footer a {
+                    font-size: 18px;
+                    font-weight: 700;
+                }
+
+                .lh-item label{
+                    font-weight: normal;
+                    display: inline-block;
+                    font-size: 18px;
+                    margin-bottom: 0;
+                }
+
+                .lh-item input {
+                    -webkit-appearance: auto !important;
+                    background: white;
+                    width: auto;
+                    height: auto;
+                    float: none;
+                    margin-bottom: 0;
+                    border: 1px solid #e2e2e2;
+                    font-size: 18px;
+                    padding: 0;
+                }
+
+                .lh-item input[type="range"] {
+                    display: inline-block;
+                }
+
+                .lh-item select {
+                    width: auto;
+                    border: 1px solid #e2e2e2;
+                    font-size: 16px;
+                    display: inline-block;
+                    background-color: #f8f8f8;
+                    color: #aaaaaa;
+                    padding: 0 30px 0 2px;
+                    border-radius: 3px;
+                    height: 30px;
+                    line-height: 28px;
+                    outline: none;
+                    appearance: none;
+                    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAANCAYAAAC+ct6XAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6RjBBRUQ1QTQ1QzkxMTFFMDlDNDdEQzgyNUE1RjI4MTEiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6RjBBRUQ1QTU1QzkxMTFFMDlDNDdEQzgyNUE1RjI4MTEiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpGMEFFRDVBMjVDOTExMUUwOUM0N0RDODI1QTVGMjgxMSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpGMEFFRDVBMzVDOTExMUUwOUM0N0RDODI1QTVGMjgxMSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pk5mU4QAAACUSURBVHjaYmRgYJD6////MwY6AyaGAQIspCieM2cOjKkIxCFA3A0TSElJoZ3FUCANxAeAWA6IOYG4iR5BjWwpCDQCcSnNgxoIVJCDFwnwA/FHWlp8EIpHSKoGgiggLkITewrEcbQO6mVAbAbE+VD+a3IsJTc7FQAxDxD7AbEzEF+jR1DDywtoCr9DbhwzDlRZDRBgACYqHJO9bkklAAAAAElFTkSuQmCC);
+                    background-position: center right;
+                    background-repeat: no-repeat;
+                }
+
+                .lh-item button {
+                    border: 1px solid #e2e2e2;
+                    font-size: 16px;
+                    padding: 2px 5px;
+                    border-radius: 10px;
+                    color: #000;
+                    background-color: #f0f0f0;
+                }
+
+                .lh-item button:hover {
+                    background-color: #3e97eb;
+                    color: white;
+                }
+
+                @keyframes hover-color {
+                    from {
+                        border-color: #e2e2e2;
+                    }
+                    to {
+                        border-color: #3e97eb;
+                    } 
+                }
+
+                .lh-item input[type="checkbox"] {
+                    display: none;
+                    position: absolute;
+                }
+
+                .lh-item input[type="checkbox"]+span {
+                    position: relative;
+                    padding-left: 30px;
+                    cursor: pointer;
+                }
+
+                .lh-item input[type="checkbox"]+span:hover:before {
+                    animation-duration: 0.4s;
+                    animation-fill-mode: both;
+                    animation-name: hover-color;
+                }
+
+                .lh-item input[type="checkbox"]+span:before {
+                    position: absolute;
+                    top: 2px;
+                    left: 5px;
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    content: "";
+                    border: 1px solid #e2e2e2;
+                    border-radius: 3px;
+                }
+
+                .lh-item input[type="checkbox"]+span:after {
+                    position: absolute;
+                    display: none;
+                    content: "";
+                    top: 4px;
+                    left: 12px;
+                    box-sizing: border-box;
+                    width: 6px;
+                    height: 12px;
+                    transform: rotate(45deg);
+                    border-width: 2px;
+                    border-style: solid;
+                    border-color: #fff;
+                    border-top: 0;
+                    border-left: 0
+                }
+
+                .lh-item input[type="checkbox"]:checked+span:before {
+                    animation-name: none;
+                    border: #3e97eb;
+                    background: #3e97eb;
+                }
+
+                .lh-item input[type="checkbox"]:checked+span:after {
+                    display: block;
+                }
+            </style><style type="text/css">.cyxy-trs-target.colored {
+  background-color: rgba(0, 185, 119, 0.05);
+}
+
+.cyxy-target-popup {
+  padding: 1.3rem 12px;
+  position: absolute;
+  display: -webkit-flex;
+  display: inline-flex;
+  flex-direction: row;
+  overflow: scroll;
+  vertical-align: middle;
+  z-index: 199099;
+  top: 1px;
+  left: 1px;
+  background: #fff;
+  opacity: 0.98;
+  /*margin: 0px 5%;*/
+  height: auto;
+  width: auto;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.13);
+  border-radius: 5px;
+  /*height: 7rem;*/
+}
+
+@media (max-width: 468px) {
+  .cyxy-target-popup {
+    /*width: 90%;*/
+    /*margin: 0px 5%;*/
+    left: 10%;
+    /*right: 5%;*/
+    /*width: 30rem;*/
+    /*height: 14.58rem;*/
+  }
+}
+
+#cyxy-popup-left-slide {
+  height: 22px;
+  display: inline;
+  vertical-align: middle;
+  margin-right: 14px;
+  cursor: pointer;
+}
+
+#cyxy-popup-right-slide {
+  height: 22px;
+  display: inline;
+  vertical-align: middle;
+  margin-left: 0px;
+  cursor: pointer;
+}
+
+#cyxy-popup-userinfo {
+  display: inline;
+}
+
+.cyxy-target-count {
+  display: inline;
+  vertical-align: middle;
+  font-size: 10px;
+}
+
+#cyxy-popup-avatar {
+  /*margin-right: 30px;*/
+  /*font-size: 14px;*/
+  display: inline;
+  height: 32px;
+  vertical-align: middle;
+  border-radius: 16px;
+}
+
+#cyxy-popup-name-time {
+  display: -webkit-flex;
+  display: inline-flex;
+  flex-direction: column;
+  /*align-items: center;*/
+  /*position: relative;*/
+  vertical-align: middle;
+  text-align: left;
+  margin-left: 6px;
+}
+
+#cyxy-popup-name {
+  /*vertical-align: middle;*/
+  /*display: flex;*/
+  font-size: 14px;
+  color: #333;
+  height: 18px;
+  overflow: hidden;
+  max-width: 84px;
+}
+
+#cyxy-popup-time {
+  /*margin-right: 30px;*/
+  /*font-size: 14px;*/
+  /*display: flex;*/
+  font-size: 12px;
+  margin-top: 4px;
+  color: #999;
+}
+
+.cyxy-footer {
+  display: none;
+  position: fixed;
+  bottom: 0px;
+  padding: 0px 0px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  opacity: 0.9;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.13);
+  border-radius: 2px;
+  z-index: 201712;
+  text-align: center;
+}
+
+.cyxy-footer-p {
+  padding: 12px 0px;
+  margin: 0px;
+  font-size: 12px;
+  color: #333;
+  background: #fff;
+  text-align: center;
+  line-height: 1.6;
+  font-weight: 200;
+}
+
+#cyxy-popup-favour {
+  text-align: center;
+  display: inline;
+  margin-right: 20px;
+  margin-left: 46px;
+  cursor: pointer;
+}
+
+#cyxy-popup-favour.commit {
+  /*padding: 2px 6px;*/
+  /*border: 1px solid #00B977;*/
+  /*border-radius: 4px;*/
+}
+
+#cyxy-popup-oppose {
+  text-align: center;
+  display: inline;
+  cursor: pointer;
+}
+
+#cyxy-popup-favour-img {
+  display: inline;
+  height: 20px;
+  /*width: 22px;*/
+  vertical-align: middle;
+}
+
+#cyxy-popup-favour-img.commit {
+  /*height: 22px;*/
+  /*vertical-align: middle;*/
+}
+
+#cyxy-popup-oppose-img {
+  display: inline;
+  height: 18px;
+  vertical-align: middle;
+}
+
+#cyxy-popup-favour-num {
+  font-size: 14px;
+  margin-left: 4px;
+  /*margin-left: 0.47rem;*/
+  color: #999999;
+}
+
+#cyxy-popup-oppose-num {
+  font-size: 14px;
+  margin-left: 4px;
+  /*margin-left: 0.47rem;*/
+  color: #999;
+}
+
+.caption-window.ytp-caption-window-bottom {
+  width: 800px;
+  /* height: 100px; */
+  /* margin-left: -400px; */
+}
+
+@media (max-width: 320px) {
+  #cyxy-popup-favour {
+    margin-right: 0.8rem;
+    margin-left: 1.5rem;
+  }
+
+  #cyxy-popup-left-slide {
+    margin-right: 0.8rem;
+  }
+
+  #cyxy-popup-right-slide {
+    margin-left: 1rem;
+  }
+}
+
+.login-hint-a {
+  display: block;
+  color: #999;
+  font-size: 10px;
+}
+
+.login-hint-a:visited {
+  color: #999;
+}
+
+.layui-m-layer {
+  color: #333;
+  position: relative;
+  z-index: 2147483647;
+}
+
+.layui-m-layer * {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.layui-m-layermain,
+.layui-m-layershade {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.layui-m-layershade {
+  background-color: rgba(0, 0, 0, 0.7);
+  pointer-events: auto;
+}
+
+.layui-m-layermain {
+  display: table;
+  font-family: Helvetica, arial, sans-serif;
+  pointer-events: none;
+}
+
+.layui-m-layermain .layui-m-layersection {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.layui-m-layerchild {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  background-color: #fff;
+  font-size: 14px;
+  border-radius: 5px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  pointer-events: auto;
+  -webkit-overflow-scrolling: touch;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 0.2s;
+  animation-duration: 0.2s;
+}
+
+@-webkit-keyframes layui-m-anim-scale {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes layui-m-anim-scale {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.layui-m-anim-scale {
+  animation-name: layui-m-anim-scale;
+  -webkit-animation-name: layui-m-anim-scale;
+}
+
+@-webkit-keyframes layui-m-anim-up {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(800px);
+    transform: translateY(800px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes layui-m-anim-up {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(800px);
+    transform: translateY(800px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.layui-m-anim-up {
+  -webkit-animation-name: layui-m-anim-up;
+  animation-name: layui-m-anim-up;
+}
+
+.layui-m-layer0 .layui-m-layerchild {
+  width: 90%;
+  max-width: 640px;
+}
+
+.layui-m-layer1 .layui-m-layerchild {
+  border: none;
+  border-radius: 0;
+}
+
+.layui-m-layer2 .layui-m-layerchild {
+  width: auto;
+  max-width: 260px;
+  min-width: 40px;
+  border: none;
+  background: 0 0;
+  box-shadow: none;
+  color: #fff;
+}
+
+.layui-m-layerchild h3 {
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 5px 5px 0 0;
+  text-align: center;
+}
+
+.layui-m-layerbtn span,
+.layui-m-layerchild h3 {
+  margin: 0;
+  padding: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.layui-m-layercont {
+  padding: 50px 30px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.layui-m-layer1 .layui-m-layercont {
+  padding: 0;
+  text-align: left;
+}
+
+.layui-m-layer2 .layui-m-layercont {
+  text-align: center;
+  padding: 0;
+  line-height: 0;
+}
+
+.layui-m-layer2 .layui-m-layercont i {
+  width: 25px;
+  height: 25px;
+  margin-left: 8px;
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 100%;
+  -webkit-animation: layui-m-anim-loading 1.4s infinite ease-in-out;
+  animation: layui-m-anim-loading 1.4s infinite ease-in-out;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.layui-m-layerbtn,
+.layui-m-layerbtn span {
+  position: relative;
+  text-align: center;
+  border-radius: 0 0 5px 5px;
+}
+
+.layui-m-layer2 .layui-m-layercont p {
+  margin-top: 20px;
+}
+
+@-webkit-keyframes layui-m-anim-loading {
+  0%,
+  100%,
+  80% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes layui-m-anim-loading {
+  0%,
+  100%,
+  80% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+
+.layui-m-layer2 .layui-m-layercont i:first-child {
+  margin-left: 0;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.layui-m-layer2 .layui-m-layercont i.layui-m-layerload {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+.layui-m-layer2 .layui-m-layercont > div {
+  line-height: 22px;
+  padding-top: 7px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.layui-m-layerbtn {
+  display: box;
+  display: -moz-box;
+  display: -webkit-box;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  font-size: 0;
+  border-top: 1px solid #d0d0d0;
+  background-color: #f2f2f2;
+}
+
+.layui-m-layerbtn span {
+  display: block;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  -webkit-box-flex: 1;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.layui-m-layerbtn span[yes] {
+  color: #40affe;
+}
+
+.layui-m-layerbtn span[no] {
+  border-right: 1px solid #d0d0d0;
+  border-radius: 0 0 0 5px;
+}
+
+.layui-m-layerbtn span:active {
+  background-color: #f6f6f6;
+}
+
+.layui-m-layerend {
+  position: absolute;
+  right: 7px;
+  top: 10px;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  font-weight: 400;
+  background: 0 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+  font-size: 30px;
+}
+
+.layui-m-layerend::after,
+.layui-m-layerend::before {
+  position: absolute;
+  left: 5px;
+  top: 15px;
+  content: "";
+  width: 18px;
+  height: 1px;
+  background-color: #999;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  border-radius: 3px;
+}
+
+.layui-m-layerend::after {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.layui-m-layer .layui-m-layer-footer {
+  position: fixed;
+  width: 95%;
+  max-width: 100%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  background: 0 0;
+}
+
+.layui-m-layer-footer .layui-m-layercont {
+  padding: 20px;
+  border-radius: 5px 5px 0 0;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.layui-m-layer-footer .layui-m-layerbtn {
+  display: block;
+  height: auto;
+  background: 0 0;
+  border-top: none;
+}
+
+.layui-m-layer-footer .layui-m-layerbtn span {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.layui-m-layer-footer .layui-m-layerbtn span[no] {
+  color: #fd482c;
+  border-top: 1px solid #c2c2c2;
+  border-radius: 0 0 5px 5px;
+}
+
+.layui-m-layer-footer .layui-m-layerbtn span[yes] {
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.layui-m-layer .layui-m-layer-msg {
+  width: auto;
+  max-width: 90%;
+  margin: 0 auto;
+  bottom: -150px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+.layui-m-layer-msg .layui-m-layercont {
+  padding: 10px 20px;
+}
+
+.collection-success {
+  /*opacity: 0.6;*/
+  /*background: #EAEAEA;*/
+  color: #ffffff;
+}
+.collection-success:hover {
+  /*opacity: 0.45;*/
+  /*background: #000000;*/
+  color: #ffffff;
+}
+.layui-m-layercont .cyxy-trs-target {
+  display: none;
+}
+.collection-icon {
+  width: 12px;
+  height: 13px;
+  background: url("//staging.caiyunapp.com/imgs/layar-target.png") no-repeat;
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+}
+.collection-success > a {
+  margin-left: 12px;
+  vertical-align: middle;
+}
+.cy_free_box {
+  position: relative;
+}
+.cy_free_box img {
+  width: 100%;
+  cursor: pointer;
+  -moz-user-select: none; /*火狐*/
+  -webkit-user-select: none; /*webkit浏览器*/
+  -ms-user-select: none; /*IE10*/
+  -khtml-user-select: none; /*早期浏览器*/
+  user-select: none;
+}
+.layui-m-layer-cy_free_content {
+  background: inherit !important;
+}
+</style></head>
+<body class="post-template-default single single-post postid-3198 single-format-standard chinese-font serif" style="background-image: url(&quot;&quot;);">
+<div class="scrollbar" id="bar" style="width: 0%; background: orange;"></div>
+<section id="main-container">
+	
+<div id="page" class="site wrapper">
+<!-- #masthead -->
+
+<div class="pattern-center single-center">
+<div class="pattern-attachment-img lazyload" style="background-image: url(&quot;https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg3.jpg&quot;);" data-src="https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg3.jpg"> </div>
+<header class="pattern-header single-header"><h1 class="entry-title">在openwrt路由器上用study_xxqg和telegram代理每天刷学习强国</h1><p class="entry-census"><span><a href="https://www.imtrq.com/archives/author/%E5%82%B2%E5%A8%87%E7%9A%84%E5%B0%8F%E5%9F%BA%E5%9F%BA/"><img src="./在openwrt路由器上用study_xxqg_files/hdImg_a2ea1b9b135dee81aa9f184c44a2ea591521967508874-96x96.jpg"></a></span><span><a href="https://www.imtrq.com/archives/author/%E5%82%B2%E5%A8%87%E7%9A%84%E5%B0%8F%E5%9F%BA%E5%9F%BA/">傲娇的小基基</a></span><span class="bull">·</span>2022-11-02<span class="bull">·</span>439 次阅读</p></header>
+</div>
+<div id="content" class="site-content" style="background-color: rgba(255, 255, 255, 0.8);">
+<div id="primary" class="content-area">
+<main id="main" class="site-main" role="main">
+<article id="post-3198" class="post-3198 post type-post status-publish format-standard has-post-thumbnail hentry category-bakatechs">
+<!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+<div class="entry-content">
+<h2>前言</h2>
+<ol><li>之前我一直都用的是tech强国，但以前的tech强国每天都需要手动登录，如果我只刷自己一个人的话其实还不是很繁琐，但如果要帮别人一起刷就很不方便。</li><li>我也尝试过微信推送和网页推送，都有不方便的地方。微信推送需要公网ip，如果你在服务器上刷很方便，但是异地登录又很容易被风控；网页推送需要公网ip、内网穿透、相同网络环境三选一，部署在路由器上也不方便远程管理。而TG推送只需要路由器翻墙就可以了，用上openwrt的人应该没有不翻墙的吧。</li><li>我使用的是N1盒子，系统是flippy的69+o，自带docker，每天把我和我对象的学习强国刷到39分，已经稳定运行了两个月。</li><li>其实<a href="https://johlanse.shhy.xyz/#/./start" target="_blank" rel="nofollow">官方文档</a>已经有了十分清晰的教程，你完全可以不看这一篇~</li></ol>
+<h2>教程</h2>
+<h3>1 新建docker-compose.yml</h3>
+<p>1.1 ssh登录路由器</p>
+<p>我用的是Termius，可以在各个客户端中同步主机信息，我特别喜欢这一点</p>
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img decoding="async" width="1299" height="890" class="lazyload" data-src="https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg1.jpg" src="./在openwrt路由器上用study_xxqg_files/study_xxqg1.jpg" onerror="imgError(this)" alt="" srcset="https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg1.jpg 1299w, https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg1-300x206.jpg 300w, https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg1-1024x702.jpg 1024w, https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg1-768x526.jpg 768w" sizes="(max-width: 1299px) 100vw, 1299px"></figure></div>
+<noscript><img decoding="async" width="1299" height="890" src="https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg1.jpg" alt="" class="wp-image-3199" srcset="https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg1.jpg 1299w, https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg1-300x206.jpg 300w, https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg1-1024x702.jpg 1024w, https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg1-768x526.jpg 768w" sizes="(max-width: 1299px) 100vw, 1299px" /></figure></div></noscript>
+<p>1.2 新建一个study_xxqg文件夹，进入该文件夹</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-beyond enlighter-hover enlighter-linenumbers enlighter-overflow-scroll "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">mkdir study_xxqg</span></div></div><div class=""><div><span class="enlighter-text">cd study_xxqg</span></div></div></div><div class="enlighter-raw">mkdir study_xxqg
+cd study_xxqg</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin" data-enlighter-language="generic" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">mkdir study_xxqg
+cd study_xxqg</pre>
+<p>1.3 新建一个docker-compose.yml文件</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-beyond enlighter-hover enlighter-linenumbers enlighter-overflow-scroll "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">vim docker-compose.</span><span class="enlighter-m3">yml</span></div></div></div><div class="enlighter-raw">vim docker-compose.yml</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin" data-enlighter-language="generic" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">vim docker-compose.yml</pre>
+<p>按i/insert进入编辑模式，将下列代码粘贴进去</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-beyond enlighter-hover enlighter-linenumbers enlighter-overflow-scroll "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">version: </span><span class="enlighter-s0">"3.5"</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">services:</span></div></div><div class=""><div><span class="enlighter-text">  xuexi-auto:</span></div></div><div class=""><div><span class="enlighter-text">    image: jolanse/study_xxqg:latest</span></div></div><div class=""><div><span class="enlighter-text">    </span><span class="enlighter-c0"># 容器名</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    container_name: xuexi-auto</span></div></div><div class=""><div><span class="enlighter-text">    environment:</span></div></div><div class=""><div><span class="enlighter-text">    </span><span class="enlighter-c0"># 时区</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">      - TZ=Asia/Shanghai</span></div></div><div class=""><div><span class="enlighter-text">    </span><span class="enlighter-c0"># 配置文件路径</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    volumes:</span></div></div><div class=""><div><span class="enlighter-text">      - ./config:/opt/config</span></div></div><div class=""><div><span class="enlighter-text">    </span><span class="enlighter-c0"># 映射端口</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    ports:</span></div></div><div class=""><div><span class="enlighter-text">      - </span><span class="enlighter-n1">8080</span><span class="enlighter-text">:</span><span class="enlighter-n1">8080</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    restart: unless-stopped</span></div></div></div><div class="enlighter-raw">version: "3.5"
+services:
+  xuexi-auto:
+    image: jolanse/study_xxqg:latest
+    # 容器名
+    container_name: xuexi-auto
+    environment:
+    # 时区
+      - TZ=Asia/Shanghai
+    # 配置文件路径
+    volumes:
+      - ./config:/opt/config
+    # 映射端口
+    ports:
+      - 8080:8080
+    restart: unless-stopped</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin" data-enlighter-language="generic" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">version: "3.5"
+services:
+  xuexi-auto:
+    image: jolanse/study_xxqg:latest
+    # 容器名
+    container_name: xuexi-auto
+    environment:
+    # 时区
+      - TZ=Asia/Shanghai
+    # 配置文件路径
+    volumes:
+      - ./config:/opt/config
+    # 映射端口
+    ports:
+      - 8080:8080
+    restart: unless-stopped</pre>
+<p>按下esc，输入<code>:wq</code>回车，保存并退出</p>
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img decoding="async" loading="lazy" width="1299" height="890" class="lazyload" data-src="https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg2.jpg" src="./在openwrt路由器上用study_xxqg_files/study_xxqg2.jpg" onerror="imgError(this)" alt="" srcset="https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg2.jpg 1299w, https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg2-300x206.jpg 300w, https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg2-1024x702.jpg 1024w, https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg2-768x526.jpg 768w" sizes="(max-width: 1299px) 100vw, 1299px"></figure></div>
+<noscript><img decoding="async" loading="lazy" width="1299" height="890" src="https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg2.jpg" alt="" class="wp-image-3200" srcset="https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg2.jpg 1299w, https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg2-300x206.jpg 300w, https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg2-1024x702.jpg 1024w, https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg2-768x526.jpg 768w" sizes="(max-width: 1299px) 100vw, 1299px" /></figure></div></noscript>
+<h3>2 新建配置文件，配置定时任务和tg代理</h3>
+<p>2.1 新建配置文件</p>
+<p>在study_xxqg文件夹下，新建config文件夹并进入</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-beyond enlighter-hover enlighter-linenumbers enlighter-overflow-scroll "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">mkdir config</span></div></div><div class=""><div><span class="enlighter-text">cd config</span></div></div></div><div class="enlighter-raw">mkdir config
+cd config</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin" data-enlighter-language="generic" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">mkdir config
+cd config</pre>
+<p>新建配置文件</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-beyond enlighter-hover enlighter-linenumbers enlighter-overflow-scroll "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">vim config.</span><span class="enlighter-m3">yml</span></div></div></div><div class="enlighter-raw">vim config.yml</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin" data-enlighter-language="generic" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">vim config.yml</pre>
+<p>把下列代码粘贴进去</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-beyond enlighter-hover enlighter-linenumbers enlighter-overflow-scroll "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-c0"># 刷课模式，默认为3，</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># 1：只刷文章何视频</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># 2：只刷文章和视频和每日答题</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># 3：刷文章和视频和每日答题每周答题和专项答题</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">model: </span><span class="enlighter-n1">3</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># 日志等级</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># panic</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># fatal</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># error</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># warn, warning</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># info</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># debug</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># trace</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">log_level: </span><span class="enlighter-s0">"info"</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># 是否显示浏览器</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">show_browser: </span><span class="enlighter-k1">false</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># 跳转学习强国的scheme,默认使用本仓库的action自建scheme,若需自行修改，可直接复制仓库下/docs/scheme.html到任意静态文件服务器</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">scheme: </span><span class="enlighter-s0">"https://johlanse.github.io/study_xxqg/scheme.html?"</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">push:</span></div></div><div class=""><div><span class="enlighter-text">  ding:</span></div></div><div class=""><div><span class="enlighter-text">    enable: </span><span class="enlighter-k1">false</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    access_token: </span><span class="enlighter-s0">""</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    secret: </span><span class="enlighter-s0">""</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  </span><span class="enlighter-c0"># 目前仅支持push-plus推送二维码，默认建议使用push-plus推送</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  </span><span class="enlighter-c0"># push-plus使用方法见：http://www.pushplus.plus/</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  push_plus:</span></div></div><div class=""><div><span class="enlighter-text">    enable: </span><span class="enlighter-k1">false</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">    token: </span><span class="enlighter-s0">""</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># telegram交互模式配置</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">tg:</span></div></div><div class=""><div><span class="enlighter-text">  enable: </span><span class="enlighter-k1">false</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  chat_id: </span><span class="enlighter-n1">0</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  token: </span><span class="enlighter-s0">""</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  </span><span class="enlighter-c0"># telegram的代理，不配置默认走系统代理</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  proxy: </span><span class="enlighter-s0">""</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  </span><span class="enlighter-c0"># 自定义tg的api,可通过cloudflare搭建，需自备域名</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  custom_api: </span><span class="enlighter-s0">"https://api.telegram.org"</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  </span><span class="enlighter-c0"># 白名单id,包括群id或者用户id,若为空，则允许所有群所有用户使用，若仅用于单人，直接配置上面的chat_id就可以</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  white_list:</span></div></div><div class=""><div><span class="enlighter-text">    - </span><span class="enlighter-n1">123</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># 网页端配置</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">web:</span></div></div><div class=""><div><span class="enlighter-text">  </span><span class="enlighter-c0"># 是否启用网页</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  enable: </span><span class="enlighter-k1">true</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  </span><span class="enlighter-c0">#</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  host: </span><span class="enlighter-m3">0</span><span class="enlighter-text">.</span><span class="enlighter-m3">0</span><span class="enlighter-text">.</span><span class="enlighter-m3">0</span><span class="enlighter-text">.</span><span class="enlighter-n1">0</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  port: </span><span class="enlighter-n1">8080</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  </span><span class="enlighter-c0"># 网页端登录账号</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  account: admin</span></div></div><div class=""><div><span class="enlighter-text">  </span><span class="enlighter-c0"># 网页端登录密码</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  password: admin</span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># 微信公众号测试号配置</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">wechat:</span></div></div><div class=""><div><span class="enlighter-text">  </span><span class="enlighter-c0"># 是否启用</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  enable: </span><span class="enlighter-k1">false</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  </span><span class="enlighter-c0"># 开发者平台设置的token</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  token: </span><span class="enlighter-s0">""</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  </span><span class="enlighter-c0"># 开发者平台的secret</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  secret: </span><span class="enlighter-s0">""</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  </span><span class="enlighter-c0"># 开发者平台的appId</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  app_id: </span><span class="enlighter-s0">""</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  </span><span class="enlighter-c0"># 发送登录消息需要使用的消息模板</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  </span><span class="enlighter-c0"># 模板标题，随意  模板内容：  点我登录，然后在浏览器中打开！！</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  login_temp_id: </span><span class="enlighter-s0">""</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  </span><span class="enlighter-c0"># 发送普通消息需要使用的消息模板</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  </span><span class="enlighter-c0"># 模板标题：随意 模板内容： {{data.DATA}}</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  normal_temp_id: </span><span class="enlighter-s0">""</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  </span><span class="enlighter-c0"># xxqg会每隔两小时左右检查所有用户的ck有效性，若开启该选项，会在检查失败时推送提醒消息</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  push_login_warn: </span><span class="enlighter-k1">false</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  </span><span class="enlighter-c0"># 微信管理员的openid,可点击关于按钮获得，配置后请重启程序</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  super_open_id: </span><span class="enlighter-s0">""</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># pushDeer推送配置,详情参考psuhDeer官网：http://www.pushdeer.com/official.html</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">push_deer:</span></div></div><div class=""><div><span class="enlighter-text">  enable: </span><span class="enlighter-k1">false</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  api: </span><span class="enlighter-s0">"https://api2.pushdeer.com"</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  token: </span><span class="enlighter-s0">""</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># 登录重试配置</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">retry:</span></div></div><div class=""><div><span class="enlighter-text">  </span><span class="enlighter-c0"># 重试次数</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  times: </span><span class="enlighter-n1">0</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  </span><span class="enlighter-c0"># 重试之间的时间间隔，单位为分钟</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  intervals: </span><span class="enlighter-n1">5</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># 设置是否定时执行学习程序，格式为cron格式</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># "9 19 * * *" 每天19点9分执行一次</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># "* 10 * * *” 每天早上十点执行一次</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">cron: </span><span class="enlighter-s0">"0 0 * * *"</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># 定时任务随机等待时间，单位：分钟</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">cron_random_wait: </span><span class="enlighter-n1">0</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0">#windows环境自定义浏览器路径，仅支持chromium系列，需要将\替换为/或者\\</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">edge_path: </span><span class="enlighter-s0">""</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># 启动时等待时间，为了防止代理启动比软件慢而报错，默认不等待，单位秒</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">start_wait: </span><span class="enlighter-n1">0</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># 专项答题可接受的最小分值，因一天重复运行的时候，若专项答题未能答满会继续答新的一套题，会浪费题</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">special_min_score: </span><span class="enlighter-n1">10</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># 题目搜索的顺序，为true则从2018年最开始搜题，否则从现在最新开始搜题</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">reverse_order: </span><span class="enlighter-k1">false</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># 定时任务运行时协程池的大小</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">pool_size: </span><span class="enlighter-n1">1</span></div></div></div><div class="enlighter-raw"># 刷课模式，默认为3，
+# 1：只刷文章何视频
+# 2：只刷文章和视频和每日答题
+# 3：刷文章和视频和每日答题每周答题和专项答题
+model: 3
+
+# 日志等级
+# panic
+# fatal
+# error
+# warn, warning
+# info
+# debug
+# trace
+log_level: "info"
+
+# 是否显示浏览器
+show_browser: false
+
+# 跳转学习强国的scheme,默认使用本仓库的action自建scheme,若需自行修改，可直接复制仓库下/docs/scheme.html到任意静态文件服务器
+scheme: "https://johlanse.github.io/study_xxqg/scheme.html?"
+
+
+push:
+  ding:
+    enable: false
+    access_token: ""
+    secret: ""
+  # 目前仅支持push-plus推送二维码，默认建议使用push-plus推送
+  # push-plus使用方法见：http://www.pushplus.plus/
+  push_plus:
+    enable: false
+    token: ""
+
+# telegram交互模式配置
+tg:
+  enable: false
+  chat_id: 0
+  token: ""
+  # telegram的代理，不配置默认走系统代理
+  proxy: ""
+  # 自定义tg的api,可通过cloudflare搭建，需自备域名
+  custom_api: "https://api.telegram.org"
+  # 白名单id,包括群id或者用户id,若为空，则允许所有群所有用户使用，若仅用于单人，直接配置上面的chat_id就可以
+  white_list:
+    - 123
+# 网页端配置
+web:
+  # 是否启用网页
+  enable: true
+  #
+  host: 0.0.0.0
+  port: 8080
+  # 网页端登录账号
+  account: admin
+  # 网页端登录密码
+  password: admin
+
+# 微信公众号测试号配置
+wechat:
+  # 是否启用
+  enable: false
+  # 开发者平台设置的token
+  token: ""
+  # 开发者平台的secret
+  secret: ""
+  # 开发者平台的appId
+  app_id: ""
+  # 发送登录消息需要使用的消息模板
+  # 模板标题，随意  模板内容：  点我登录，然后在浏览器中打开！！
+  login_temp_id: ""
+  # 发送普通消息需要使用的消息模板
+  # 模板标题：随意 模板内容： {{data.DATA}}
+  normal_temp_id: ""
+  # xxqg会每隔两小时左右检查所有用户的ck有效性，若开启该选项，会在检查失败时推送提醒消息
+  push_login_warn: false
+  # 微信管理员的openid,可点击关于按钮获得，配置后请重启程序
+  super_open_id: ""
+
+
+# pushDeer推送配置,详情参考psuhDeer官网：http://www.pushdeer.com/official.html
+push_deer:
+  enable: false
+  api: "https://api2.pushdeer.com"
+  token: ""
+
+# 登录重试配置
+retry:
+  # 重试次数
+  times: 0
+
+  # 重试之间的时间间隔，单位为分钟
+  intervals: 5
+
+
+# 设置是否定时执行学习程序，格式为cron格式
+# "9 19 * * *" 每天19点9分执行一次
+# "* 10 * * *” 每天早上十点执行一次
+cron: "0 0 * * *"
+
+# 定时任务随机等待时间，单位：分钟
+cron_random_wait: 0
+
+#windows环境自定义浏览器路径，仅支持chromium系列，需要将\替换为/或者\\
+edge_path: ""
+
+# 启动时等待时间，为了防止代理启动比软件慢而报错，默认不等待，单位秒
+start_wait: 0
+
+# 专项答题可接受的最小分值，因一天重复运行的时候，若专项答题未能答满会继续答新的一套题，会浪费题
+special_min_score: 10
+
+# 题目搜索的顺序，为true则从2018年最开始搜题，否则从现在最新开始搜题
+reverse_order: false
+
+# 定时任务运行时协程池的大小
+pool_size: 1</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin" data-enlighter-language="generic" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group=""># 刷课模式，默认为3，
+# 1：只刷文章何视频
+# 2：只刷文章和视频和每日答题
+# 3：刷文章和视频和每日答题每周答题和专项答题
+model: 3
+
+# 日志等级
+# panic
+# fatal
+# error
+# warn, warning
+# info
+# debug
+# trace
+log_level: "info"
+
+# 是否显示浏览器
+show_browser: false
+
+# 跳转学习强国的scheme,默认使用本仓库的action自建scheme,若需自行修改，可直接复制仓库下/docs/scheme.html到任意静态文件服务器
+scheme: "https://johlanse.github.io/study_xxqg/scheme.html?"
+
+
+push:
+  ding:
+    enable: false
+    access_token: ""
+    secret: ""
+  # 目前仅支持push-plus推送二维码，默认建议使用push-plus推送
+  # push-plus使用方法见：http://www.pushplus.plus/
+  push_plus:
+    enable: false
+    token: ""
+
+# telegram交互模式配置
+tg:
+  enable: false
+  chat_id: 0
+  token: ""
+  # telegram的代理，不配置默认走系统代理
+  proxy: ""
+  # 自定义tg的api,可通过cloudflare搭建，需自备域名
+  custom_api: "https://api.telegram.org"
+  # 白名单id,包括群id或者用户id,若为空，则允许所有群所有用户使用，若仅用于单人，直接配置上面的chat_id就可以
+  white_list:
+    - 123
+# 网页端配置
+web:
+  # 是否启用网页
+  enable: true
+  #
+  host: 0.0.0.0
+  port: 8080
+  # 网页端登录账号
+  account: admin
+  # 网页端登录密码
+  password: admin
+
+# 微信公众号测试号配置
+wechat:
+  # 是否启用
+  enable: false
+  # 开发者平台设置的token
+  token: ""
+  # 开发者平台的secret
+  secret: ""
+  # 开发者平台的appId
+  app_id: ""
+  # 发送登录消息需要使用的消息模板
+  # 模板标题，随意  模板内容：  点我登录，然后在浏览器中打开！！
+  login_temp_id: ""
+  # 发送普通消息需要使用的消息模板
+  # 模板标题：随意 模板内容： {{data.DATA}}
+  normal_temp_id: ""
+  # xxqg会每隔两小时左右检查所有用户的ck有效性，若开启该选项，会在检查失败时推送提醒消息
+  push_login_warn: false
+  # 微信管理员的openid,可点击关于按钮获得，配置后请重启程序
+  super_open_id: ""
+
+
+# pushDeer推送配置,详情参考psuhDeer官网：http://www.pushdeer.com/official.html
+push_deer:
+  enable: false
+  api: "https://api2.pushdeer.com"
+  token: ""
+
+# 登录重试配置
+retry:
+  # 重试次数
+  times: 0
+
+  # 重试之间的时间间隔，单位为分钟
+  intervals: 5
+
+
+# 设置是否定时执行学习程序，格式为cron格式
+# "9 19 * * *" 每天19点9分执行一次
+# "* 10 * * *” 每天早上十点执行一次
+cron: "0 0 * * *"
+
+# 定时任务随机等待时间，单位：分钟
+cron_random_wait: 0
+
+#windows环境自定义浏览器路径，仅支持chromium系列，需要将\替换为/或者\\
+edge_path: ""
+
+# 启动时等待时间，为了防止代理启动比软件慢而报错，默认不等待，单位秒
+start_wait: 0
+
+# 专项答题可接受的最小分值，因一天重复运行的时候，若专项答题未能答满会继续答新的一套题，会浪费题
+special_min_score: 10
+
+# 题目搜索的顺序，为true则从2018年最开始搜题，否则从现在最新开始搜题
+reverse_order: false
+
+# 定时任务运行时协程池的大小
+pool_size: 1</pre>
+<p>按下esc，输入<code>:wq</code>回车，保存并退出</p>
+<p>2.2 定时任务</p>
+<p>修改配置文件的这一段：</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-beyond enlighter-hover enlighter-linenumbers enlighter-overflow-scroll "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-c0"># 设置是否定时执行学习程序，格式为cron格式</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># "9 19 * * *" 每天19点9分执行一次</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># "* 10 * * *” 每天早上十点执行一次</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">cron: </span><span class="enlighter-s0">"0 0 * * *"</span></div></div></div><div class="enlighter-raw"># 设置是否定时执行学习程序，格式为cron格式
+# "9 19 * * *" 每天19点9分执行一次
+# "* 10 * * *” 每天早上十点执行一次
+cron: "0 0 * * *"</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin" data-enlighter-language="generic" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group=""># 设置是否定时执行学习程序，格式为cron格式
+# "9 19 * * *" 每天19点9分执行一次
+# "* 10 * * *” 每天早上十点执行一次
+cron: "0 0 * * *"</pre>
+<p>我是每天早上6点半执行，那么我就改成</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-beyond enlighter-hover enlighter-linenumbers enlighter-overflow-scroll "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-c0"># 设置是否定时执行学习程序，格式为cron格式</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># "9 19 * * *" 每天19点9分执行一次</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text"></span><span class="enlighter-c0"># "* 10 * * *” 每天早上十点执行一次</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">cron: </span><span class="enlighter-s0">"30 6 * * *"</span></div></div></div><div class="enlighter-raw"># 设置是否定时执行学习程序，格式为cron格式
+# "9 19 * * *" 每天19点9分执行一次
+# "* 10 * * *” 每天早上十点执行一次
+cron: "30 6 * * *"</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin" data-enlighter-language="generic" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group=""># 设置是否定时执行学习程序，格式为cron格式
+# "9 19 * * *" 每天19点9分执行一次
+# "* 10 * * *” 每天早上十点执行一次
+cron: "30 6 * * *"</pre>
+<p>2.3 tg代理</p>
+<p>这一段我完全复制的官方文档，如果你的路由器已经处于翻墙环境，那么第6步可以省略</p>
+<p>配置 config.yml的如下部分</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-beyond enlighter-hover enlighter-linenumbers enlighter-overflow-scroll "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">tg:</span></div></div><div class=""><div><span class="enlighter-text">  enable: </span><span class="enlighter-k1">false</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  chat_id: </span><span class="enlighter-n1">0</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  token: </span><span class="enlighter-s0">""</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  </span><span class="enlighter-c0"># telegram的代理，不配置默认走系统代理</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  proxy: </span><span class="enlighter-s0">""</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  </span><span class="enlighter-c0"># 自定义tg的api,可通过cloudflare搭建，需自备域名</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  custom_api: </span><span class="enlighter-s0">"https://api.telegram.org"</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  </span><span class="enlighter-c0"># 白名单id,包括群id或者用户id,若为空，则允许所有群所有用户使用，若仅用于单人，直接配置上面的chat_id就可以</span><span class="enlighter-text"></span></div></div><div class=""><div><span class="enlighter-text">  white_list:</span></div></div><div class=""><div><span class="enlighter-text">    - </span><span class="enlighter-n1">123</span></div></div></div><div class="enlighter-raw">tg:
+  enable: false
+  chat_id: 0
+  token: ""
+  # telegram的代理，不配置默认走系统代理
+  proxy: ""
+  # 自定义tg的api,可通过cloudflare搭建，需自备域名
+  custom_api: "https://api.telegram.org"
+  # 白名单id,包括群id或者用户id,若为空，则允许所有群所有用户使用，若仅用于单人，直接配置上面的chat_id就可以
+  white_list:
+    - 123</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin" data-enlighter-language="generic" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">tg:
+  enable: false
+  chat_id: 0
+  token: ""
+  # telegram的代理，不配置默认走系统代理
+  proxy: ""
+  # 自定义tg的api,可通过cloudflare搭建，需自备域名
+  custom_api: "https://api.telegram.org"
+  # 白名单id,包括群id或者用户id,若为空，则允许所有群所有用户使用，若仅用于单人，直接配置上面的chat_id就可以
+  white_list:
+    - 123</pre>
+<ol><li>在 Tg 中搜索<a href="https://t.me/BotFather" target="_blank" rel="nofollow"><code>@BotFather</code></a> ，发送指令<code>/newbot</code>创建一个 bot</li><li>获取你创建好的 API Token 格式为<code>123456789:AAaaaa-Uuuuuuuuuuu</code> ,要完整复制<strong>全部内容</strong></li><li>在 Tg 中搜索<a href="https://t.me/userinfobot" target="_blank" rel="nofollow"><code>@userinfobot</code></a> ，点击<code>START</code>，它就会给你发送你的信息，记住 Id 即可，是一串数字。</li><li>跟你创建的 bot 会话，点击<code>START</code>，或者发送<code>/start</code></li><li>将第 2 步获取的 token 放在<code>tokenn</code>中，第 3 步获取的 Id 放到<code>chat_id</code>中，<code>enable</code>设置为 true。</li><li>因为众所周知的原因，telegram推送需要进行配置代理，例如clash的代理配置为<code>http://127.0.0.1:7890</code>即可，若通过cf反代的api,,则填写到<strong>custom_api</strong>配置项</li><li>若不配置代理的情况下会默认走系统代理，white_list建议填写自己的chat_id,为可以使用机器人的白名单，若需要在群组中使用，请相应进行配置</li></ol>
+<p>3 开始运行</p>
+<p>回到study_xxqg文件夹，输入</p>
+<div class="enlighter-default enlighter-v-standard enlighter-t-beyond enlighter-hover enlighter-linenumbers enlighter-overflow-scroll "><div class="enlighter-toolbar-top enlighter-toolbar"><div class="enlighter-btn enlighter-btn-raw" title="Plain text"></div><div class="enlighter-btn enlighter-btn-copy" title="Copy to clipboard"></div><div class="enlighter-btn enlighter-btn-window" title="Open code in new window"></div><div class="enlighter-btn enlighter-btn-website" title="EnlighterJS 3 Syntax Highlighter"></div></div><div class="enlighter" style=""><div class=""><div><span class="enlighter-text">docker-compose up -d</span></div></div></div><div class="enlighter-raw">docker-compose up -d</div><div class="enlighter-toolbar-bottom enlighter-toolbar"></div></div><pre class="EnlighterJSRAW enlighter-origin" data-enlighter-language="generic" data-enlighter-theme="" data-enlighter-highlight="" data-enlighter-linenumbers="" data-enlighter-lineoffset="" data-enlighter-title="" data-enlighter-group="">docker-compose up -d</pre>
+<p>并回车，拉取完毕之后会自动运行，tg机器人那边会提示已经上线，之后可以点击menu按照提示操作</p>
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img decoding="async" loading="lazy" width="786" height="145" class="lazyload" data-src="https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg3.jpg" src="./在openwrt路由器上用study_xxqg_files/study_xxqg3.jpg" onerror="imgError(this)" alt="" srcset="https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg3.jpg 786w, https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg3-300x55.jpg 300w, https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg3-768x142.jpg 768w" sizes="(max-width: 786px) 100vw, 786px"></figure></div>
+<noscript><img decoding="async" loading="lazy" width="786" height="145" src="https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg3.jpg" alt="" class="wp-image-3201" srcset="https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg3.jpg 786w, https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg3-300x55.jpg 300w, https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg3-768x142.jpg 768w" sizes="(max-width: 786px) 100vw, 786px" /></figure></div></noscript>
+<p>如果没有提示上线的话，请检查代理、查看日志。N1盒子可能需要手动点击一下联网。</p>
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img decoding="async" loading="lazy" width="1529" height="152" class="lazyload" data-src="https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg4.jpg" src="./在openwrt路由器上用study_xxqg_files/study_xxqg4.jpg" onerror="imgError(this)" alt="" srcset="https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg4.jpg 1529w, https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg4-300x30.jpg 300w, https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg4-1024x102.jpg 1024w, https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg4-768x76.jpg 768w" sizes="(max-width: 1529px) 100vw, 1529px"></figure></div>
+<noscript><img decoding="async" loading="lazy" width="1529" height="152" src="https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg4.jpg" alt="" class="wp-image-3202" srcset="https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg4.jpg 1529w, https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg4-300x30.jpg 300w, https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg4-1024x102.jpg 1024w, https://static.imtrq.com/wp-content/uploads/2022/11/study_xxqg4-768x76.jpg 768w" sizes="(max-width: 1529px) 100vw, 1529px" /></figure></div></noscript>				<!--<div class="oshimai"></div>-->
+<!--<h2 style="opacity:0;max-height:0;margin:0">Comments</h2>--><!-- 评论跳转标记 -->
+</div><!-- .entry-content -->
+<footer class="post-footer">
+<div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+<div class="post-tags">
+</div>
+<div class="post-like">
+<a href="javascript:;" data-action="ding" data-id="3198" class="specsZan ">
+<i class="iconfont icon-like"></i> <span class="count">
+2</span>
+</a>
+</div>
+</footer><!-- .entry-footer -->
+</article><!-- #post-## -->
+
+</main><!-- #main -->
+</div><!-- #primary -->
+<script type="text/javascript">
+function set_views() {
+$.post(
+'https://www.imtrq.com/wp-admin/admin-ajax.php', 
+{action:'single_view', id:3198},
+null
+);
+}
+window.onload = set_views;
+</script>
+	</div><!-- #content -->
+
+</div><!-- #page Pjax container-->
+<!-- #colophon -->
+<!-- m-nav-bar -->
+</section><!-- #section -->
+<!-- m-nav-center -->
+<!-- m-nav-center end -->
+
+
+
+<!-- search start -->
+
+<!-- search end -->
+
+
+<link rel="stylesheet" href="./在openwrt路由器上用study_xxqg_files/sakura.css" media="all"><link rel="stylesheet" href="./在openwrt路由器上用study_xxqg_files/font_679578_qyt5qzzavdo39pb9.css" media="all"><link rel="stylesheet" href="./在openwrt路由器上用study_xxqg_files/APlayer.min.css" media="all"><link rel="stylesheet" href="./在openwrt路由器上用study_xxqg_files/css" media="all"><canvas width="1550" height="799" style="position: fixed; top: 0px; left: 0px; pointer-events: none; z-index: 999999;"></canvas>
+<script type="text/javascript" src="./在openwrt路由器上用study_xxqg_files/comment-reply.min.js" id="comment-reply-js"></script>
+<script type="text/javascript" src="./在openwrt路由器上用study_xxqg_files/enlighterjs.min.js" id="enlighterjs-js"></script>
+
+
+
+
+
+
+
+<!-- WP Fastest Cache file was created in 0.46784090995789 seconds, on 12-12-22 7:12:33 --><!-- via php --></body></html>
